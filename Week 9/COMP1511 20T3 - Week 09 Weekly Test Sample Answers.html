@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://cgi.cse.unsw.edu.au/~cs1511/20T3/test/09/answers -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+    
+    COMP1511 20T3 - 
+Week 09
+Weekly Test
+Sample Answers
+
+    
+</title><link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/">
+
+<link rel="stylesheet" href="./COMP1511 20T3 - Week 09 Weekly Test Sample Answers_files/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="./COMP1511 20T3 - Week 09 Weekly Test Sample Answers_files/course.css">
+
+<script src="./COMP1511 20T3 - Week 09 Weekly Test Sample Answers_files/jquery.min.js.download" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="./COMP1511 20T3 - Week 09 Weekly Test Sample Answers_files/popper.min.js.download" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="./COMP1511 20T3 - Week 09 Weekly Test Sample Answers_files/bootstrap.min.js.download" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="./COMP1511 20T3 - Week 09 Weekly Test Sample Answers_files/course.js.download"></script>
+
+
+<link rel="icon" type="image/png" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/flask.cgi/static/favicon.ico?1271605745352.0">
+
+<!-- <script async src="https://static.codepen.io/assets/embed/ei.js"></script> -->
+
+<!-- MathJax. -->
+
+
+
+
+
+
+<style>
+body {
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='50px' width='220px'><text x='0' y='15' fill='red' font-size='20' opacity='0.2'>  [OLD - 20T3]  </text></svg>");
+}
+</style>
+
+<script type="text/javascript" async="" src="./COMP1511 20T3 - Week 09 Weekly Test Sample Answers_files/MathJax.js.download"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body class="d-flex flex-column vsc-initialized" style="min-height: 100vh;"><div id="MathJax_Message" style="display: none;"></div>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light no-print" id="header-navbar">
+  <div class="container">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navmenu" aria-controls="navmenu" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a class="navbar-brand" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/">
+      COMP1511 20T3
+    </a>
+
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active"><a class="nav-link" href="https://discourse.cse.unsw.edu.au/20t3/comp1511/">Forum</a></li>
+        <li class="nav-item active"><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/student/">Submissions</a></li>
+        <li class="nav-item active"><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/history/">History</a></li>
+
+        
+        <li class="nav-item active"><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass1/index.html">Assignment 1</a></li>
+        
+
+        
+        <li class="nav-item active"><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html">Assignment 2</a></li>
+        
+
+        <li class="navbar-text px-2">|</li>
+        
+
+
+    
+
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+            
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+
+
+<li class="nav-item active dropdown">
+  <a role="button" class="nav-link dropdown-toggle" id="week-selector" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/test/09/answers#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Week 09 <span class="caret"></span>
+  </a>
+  <div class="dropdown-menu" aria-labelledby="week-selector">
+  
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/test/03/answers">Week 03</a>
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/test/04/answers">Week 04</a>
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/test/05/answers">Week 05</a>
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/test/06/answers">Week 06 (tutors only)</a>
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/test/07/answers">Week 07</a>
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/test/08/answers">Week 08</a>
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/test/09/answers">Week 09</a>
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/test/10/answers">Week 10</a>
+  </div>
+</li>
+
+
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+
+<li class="nav-item active dropdown">
+  <a role="button" class="nav-link dropdown-toggle" id="tlb-selector" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/test/09/answers#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Weekly Test <span class="caret"></span>
+  </a>
+  <div class="dropdown-menu" aria-labelledby="tlb-selector">
+  
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/tut/09/answers">Tutorial</a>
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/lab/09/answers">Laboratory</a>
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/test/09/answers">Weekly Test</a>
+  </div>
+</li>
+
+
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+<li class="nav-item active dropdown">
+  <a role="button" class="nav-link dropdown-toggle" id="qa-selector" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/test/09/answers#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Sample Answers <span class="caret"></span>
+  </a>
+  <div class="dropdown-menu" aria-labelledby="qa-selector">
+  
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/test/09/questions">Questions</a>
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/test/09/answers">Sample Answers</a>
+  </div>
+</li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<main class="container" aria-label="Content" style="flex: 1; padding-top: 4rem;">
+
+
+<header>
+
+<h1 class="text-center">
+Week 09
+Weekly Test
+Sample Answers
+</h1>
+
+</header>
+
+
+<div class="tutlab lab">
+
+
+
+
+
+<h3>Test Conditions</h3>
+
+<p>
+These questions must be completed under self-administered exam-like conditions.
+You must time the test yourself and ensure you comply with the conditions below.
+
+</p><ul>
+    <li>You may complete this test in CSE labs or elsewhere using your own machine.</li>
+    <li>You may complete this test at any time before <strong>Week 10 Thursday 21:00</strong>.</li>
+    <li>Weekly tests are designed to act like a past paper - to give you an idea of how well you are progressing in the course, and what you need to work on. Many of the questions in weekly tests are from past COMP1511 final exams.</li>
+    <li>You must treat the first hour as a real exam - no access to external help from other people or the internet.</li>
+    <li>Once the first hour has finished, you should take note of how far you got, which parts you didn't understand, and ask questions to clarify your understanding with course staff or on the course forum.</li>
+    <li>Failure to follow the above instructions will result in a lower quality learning experience and ultimately a lower mark in the final exam.</li>
+    <li>Once the first hour has finished, you may use the internet, get help from other people, and still submit your solutions afterwards.</li>
+</ul>
+
+<p>
+You may access this <strong>language documentation</strong> while attempting this test:
+
+</p><ul>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/resources/c-reference.pdf">C quick reference</a>
+
+
+
+
+
+
+</li></ul>
+
+<p>
+You may also access manual entries (the <code>man</code> command).
+
+</p><p class="text-center my-3">
+<strong class="text-danger">
+Any violation of the test conditions will results in a mark of zero for the entire weekly test component.
+</strong>
+
+</p><hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+         
+
+
+
+<section class="exercise with-test">
+    <header><h3><small style="font-variant: small-caps; text-transform: lowercase;">
+      weekly test question:
+    </small><br>Find the length of a Linked List</h3></header>
+    
+
+
+
+
+
+
+
+
+
+A linked list is another way of representing
+a collection of data of the same type.
+<p>
+Linked lists are made up of <em>nodes</em>,
+which store one element of the list each,
+as well as the location (in memory)
+of the next element.
+</p><p>
+Nodes can store data of any type, but for
+this week we will be looking at nodes
+which store integers, which are defined
+like this:
+
+
+</p><pre class="program">struct node {
+    struct node *next;
+    int          data;
+};
+</pre>
+
+
+
+
+
+<p>
+Download list_length.c <a href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/activities/list_length/list_length.c">here</a>, or copy it to your CSE
+account using the following command:
+
+</p><pre is="tty"><kbd is="sh">cp -n /web/cs1511/20T3/activities/list_length/list_length.c .</kbd>
+</pre>
+
+
+
+
+<p>
+Your task is to add code to this function in <b>list_length.c</b>:
+
+
+</p><div class="highlight"><pre><span></span><span class="c1">// Return the length of the linked list pointed by head</span>
+<span class="kt">int</span> <span class="nf">length</span><span class="p">(</span><span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// PUT YOUR CODE HERE (change the next line!)</span>
+    <span class="k">return</span> <span class="mi">42</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+
+
+
+
+
+<b>length</b> is given  one argument, <b>head</b>, which is the pointer to the first node in a linked list.
+<p>
+Add code to <b>length</b> so that its returns the length of the list.
+</p><p>
+For example if the linked list contains these 8 elements:
+</p><p>
+</p><pre>1, 7, 8, 9, 13, 19, 21, 42
+</pre>
+<p>
+<b>length</b> should return <b>8</b>.
+
+</p><h4>Testing</h4>
+
+<b>list_length.c</b> also contains a <b>main</b> function which allows you to test your <b>length</b> function.
+<p>
+This main function:
+</p><ul>
+<li> converts the command-line arguments to a linked list
+</li><li> assigns a pointer to the first node in the linked list to <b>head</b>
+</li><li> calls <b>list_length(head)</b>
+</li><li> prints the result.
+</li></ul>
+<p>
+</p><p>
+Do not change this main function.  If you want to change it, you have misread the question.
+</p><p>
+Your <b>list_length</b> function will be called directly in marking.  The main function is only to let you test your <b>list_length</b> function
+</p><p>
+Here is how you use main function allows you to test <b>list_length</b>:
+</p><p>
+
+</p><pre is="tty"><kbd is="sh">dcc list_length.c -o list_length</kbd>
+<kbd is="sh">./list_length 1 2 4 8 16 32 64 128 256</kbd>
+9
+<kbd is="sh">./list_length 2 4 6 5 8 9</kbd>
+6
+<kbd is="sh">./list_length 13 15 17 17 18</kbd>
+5
+<kbd is="sh">./list_length 42 4</kbd>
+2
+<kbd is="sh">./list_length</kbd>
+0
+</pre>
+
+
+
+
+<h4>Assumptions/Restrictions/Clarifications.</h4>
+
+<b>length</b> should return a single integer.
+<p>
+<b>length</b> should not change the linked list it is given.
+Your function should not change the next or data fields of list nodes.
+</p><p>
+<b>length</b> should not use arrays.
+</p><p>
+<b>length</b> should not call malloc.
+</p><p>
+<b>length</b> should not call scanf (or getchar or fgets).
+</p><p>
+<b>length</b> should not print anything. It should not call printf.
+</p><p>
+Do not change the supplied <b>main</b> function. It will not be tested or marked.
+
+
+
+
+
+</p><p>
+When you think your program is working you can  <code>autotest</code> to run some simple automated tests:
+
+</p><pre is="tty"><kbd is="sh">1511 autotest list_length</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When you are finished working  on this exercise you must submit
+your work by running <b>give</b>:
+
+<pre is="tty"><kbd is="sh">give cs1511 test09_list_length list_length.c</kbd>
+</pre>
+
+
+
+    
+        
+        <div class="answer">
+            Sample solution for <code>list_length.c</code>
+            
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;assert.h&gt;</span><span class="cp"></span>
+
+<span class="k">struct</span> <span class="n">node</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+    <span class="kt">int</span>          <span class="n">data</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">length</span><span class="p">(</span><span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">head</span><span class="p">);</span>
+<span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="nf">strings_to_list</span><span class="p">(</span><span class="kt">int</span> <span class="n">len</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">strings</span><span class="p">[]);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="c1">// create linked list from command line arguments</span>
+    <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">head</span> <span class="o">=</span> <span class="n">strings_to_list</span><span class="p">(</span><span class="n">argc</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+
+    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">length</span><span class="p">(</span><span class="n">head</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">result</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Return length of a linked list.</span>
+<span class="kt">int</span> <span class="nf">length</span><span class="p">(</span><span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">n</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">len</span> <span class="o">=</span> <span class="n">len</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">len</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="c1">// create linked list from array of strings</span>
+<span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="nf">strings_to_list</span><span class="p">(</span><span class="kt">int</span> <span class="n">len</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">strings</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">head</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">len</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">n</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span> <span class="p">(</span><span class="k">struct</span> <span class="n">node</span><span class="p">));</span>
+        <span class="n">assert</span><span class="p">(</span><span class="n">n</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">);</span>
+        <span class="n">n</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+        <span class="n">n</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">strings</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">head</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+            
+                Alternative solution for <code>list_length.c</code>
+                
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;assert.h&gt;</span><span class="cp"></span>
+
+<span class="k">struct</span> <span class="n">node</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+    <span class="kt">int</span>          <span class="n">data</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// Return length of a linked list.</span>
+<span class="kt">int</span> <span class="nf">length</span><span class="p">(</span><span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">head</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">length</span><span class="p">(</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+            
+        </div>
+    
+
+
+
+    </section>
+    
+         
+
+
+
+<section class="exercise with-test">
+    <header><h3><small style="font-variant: small-caps; text-transform: lowercase;">
+      weekly test question:
+    </small><br>Delete the second last element of a Linked List</h3></header>
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>
+Download list_delete_second_last.c <a href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/activities/list_delete_second_last/list_delete_second_last.c">here</a>, or copy it to your CSE
+account using the following command:
+
+</p><pre is="tty"><kbd is="sh">cp -n /web/cs1511/20T3/activities/list_delete_second_last/list_delete_second_last.c .</kbd>
+</pre>
+
+
+
+
+<p>
+Your task is to add code to this function in <b>list_delete_second_last.c</b>:
+
+
+</p><div class="highlight"><pre><span></span><span class="c1">//</span>
+<span class="c1">// Delete the second last node in the list.</span>
+<span class="c1">// The deleted node is freed.</span>
+<span class="c1">// The head of the list is returned.</span>
+<span class="c1">//</span>
+<span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="nf">delete_second_last</span><span class="p">(</span><span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// PUT YOUR CODE HERE (change the next line!)</span>
+    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+
+
+
+Note <b>list_delete_second_last.c</b> uses the following familiar data type:
+
+<pre class="program">struct node {
+    struct node *next;
+    int          data;
+};
+</pre>
+
+<b>delete_second_last</b> is given one argument, <b>head</b>, which is the pointer to the first node in a linked list.
+<p>
+Add code to <b>delete_second_last</b> so that it deletes the second last node from list.
+</p><p>
+<b>delete_second_last</b> should return a pointer to the new list.
+</p><p>
+If the list is empty, <b>delete_second_last</b> should return <b>NULL</b>.
+</p><p>
+If the list has exactly one element, <b>delete_second_last</b> should return that one element unchanged.
+</p><p>
+<b>delete_second_last</b> should call <b>free</b> to free the memory of the node it deletes.
+</p><p>
+For example if the linked list contains these 8 elements:
+</p><p>
+</p><pre>16, 7, 8, 12, 13, 19, 21, 12
+</pre>
+<p>
+<b>delete_second_last</b> should return a pointer to a list with these elements:
+</p><p>
+</p><pre>16, 7, 8, 12, 13, 19, 12
+</pre>
+
+<h4>Testing</h4>
+
+<b>list_delete_second_last.c</b> also contains a <b>main</b> function which allows you to test your <b>delete_second_last</b> function.
+<p>
+This main function:
+</p><ul>
+<li> converts the command-line arguments to a linked list
+</li><li> assigns a pointer to the first node in the linked list to <b>head</b>
+</li><li> calls <b>delete_second_last(head)</b>
+</li><li> prints the result.
+</li></ul>
+<p>
+Do not change this main function.  If you want to change it, you have misread the question.
+</p><p>
+Your <b>delete_second_last</b> function will be called directly in marking.  The main function is only to let you test your <b>delete_second_last</b> function
+</p><p>
+
+</p><pre is="tty"><kbd is="sh">cp -n /web/cs1511/20T3/activities/list_delete_second_last/list_delete_second_last.c .</kbd>
+<kbd is="sh">dcc list_delete_second_last.c -o list_delete_second_last</kbd>
+<kbd is="sh">./list_delete_second_last 16 7 8 12 13 19 21 12</kbd>
+[16, 7, 8, 12, 13, 19, 12]
+<kbd is="sh">./list_delete_second_last 2 4 6 2 4 6</kbd>
+[2, 4, 6, 2, 6]
+<kbd is="sh">./list_delete_second_last 42</kbd>
+[42]
+<kbd is="sh">./list_delete_second_last</kbd>
+[]
+</pre>
+
+
+
+
+<h4>Assumptions/Restrictions/Clarifications.</h4>
+
+<b>delete_second_last</b> should call <b>free</b> to free the memory for the node it deletes
+<p>
+<b>delete_first</b> should not change the data fields of list nodes.
+</p><p>
+<b>delete_second_last</b> should not use arrays.
+</p><p>
+<b>delete_second_last</b> should not call malloc.
+</p><p>
+<b>delete_second_last</b> should not call scanf (or getchar or fgets).
+</p><p>
+<b>delete_second_last</b> should not print anything. It should not call printf.
+</p><p>
+Do not change the supplied <b>main</b> function. It will not be tested or marked.
+
+
+
+
+
+</p><p>
+When you think your program is working you can  <code>autotest</code> to run some simple automated tests:
+
+</p><pre is="tty"><kbd is="sh">1511 autotest list_delete_second_last</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When you are finished working  on this exercise you must submit
+your work by running <b>give</b>:
+
+<pre is="tty"><kbd is="sh">give cs1511 test09_list_delete_second_last list_delete_second_last.c</kbd>
+</pre>
+
+
+
+    
+        
+        <div class="answer">
+            Sample solution for <code>list_delete_second_last.c</code>
+            
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;assert.h&gt;</span><span class="cp"></span>
+
+<span class="k">struct</span> <span class="n">node</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+    <span class="kt">int</span>          <span class="n">data</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="nf">delete_second_last</span><span class="p">(</span><span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">head</span><span class="p">);</span>
+<span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="nf">strings_to_list</span><span class="p">(</span><span class="kt">int</span> <span class="n">len</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">strings</span><span class="p">[]);</span>
+<span class="kt">void</span> <span class="nf">print_list</span><span class="p">(</span><span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">head</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="c1">// create linked list from command line arguments</span>
+    <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">head</span> <span class="o">=</span> <span class="n">strings_to_list</span><span class="p">(</span><span class="n">argc</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+
+    <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">new_head</span> <span class="o">=</span> <span class="n">delete_second_last</span><span class="p">(</span><span class="n">head</span><span class="p">);</span>
+    <span class="n">print_list</span><span class="p">(</span><span class="n">new_head</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Delete the second last node in list.</span>
+<span class="c1">// The deleted node is freed.</span>
+<span class="c1">// The head of the list is returned.</span>
+
+<span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="nf">delete_second_last</span><span class="p">(</span><span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">head</span> <span class="o">==</span> <span class="nb">NULL</span> <span class="o">||</span> <span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// list is empty no node to delete</span>
+        <span class="k">return</span> <span class="n">head</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">tmp</span> <span class="o">=</span> <span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="n">free</span><span class="p">(</span><span class="n">head</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">tmp</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">n</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+    <span class="c1">// find second last node in list</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">n</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">tmp</span> <span class="o">=</span> <span class="n">n</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+    <span class="n">n</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">n</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">head</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// create linked list from array of strings</span>
+<span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="nf">strings_to_list</span><span class="p">(</span><span class="kt">int</span> <span class="n">len</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">strings</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">head</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">len</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">n</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span> <span class="p">(</span><span class="k">struct</span> <span class="n">node</span><span class="p">));</span>
+        <span class="n">assert</span><span class="p">(</span><span class="n">n</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">);</span>
+        <span class="n">n</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+        <span class="n">n</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">strings</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">head</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// print linked list</span>
+<span class="kt">void</span> <span class="nf">print_list</span><span class="p">(</span><span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"["</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">n</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span> <span class="n">n</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// If you're getting an error here,</span>
+        <span class="c1">// you have returned an invalid list</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="n">n</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">", "</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"]</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+            
+        </div>
+    
+
+
+
+    </section>
+    
+         
+
+
+
+<section class="exercise with-test">
+    <header><h3><small style="font-variant: small-caps; text-transform: lowercase;">
+      weekly test question:
+    </small><br>Delete elements from a Linked List until it's ordered</h3></header>
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>
+Download list_delete_ordered.c <a href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/activities/list_delete_ordered/list_delete_ordered.c">here</a>, or copy it to your CSE
+account using the following command:
+
+</p><pre is="tty"><kbd is="sh">cp -n /web/cs1511/20T3/activities/list_delete_ordered/list_delete_ordered.c .</kbd>
+</pre>
+
+
+
+
+<p>
+Your task is to add code to this function in <b>list_delete_ordered.c</b>:
+
+
+</p><div class="highlight"><pre><span></span><span class="c1">// Remove any nodes in a list that are higher </span>
+<span class="c1">// than the node directly after them.</span>
+<span class="c1">// Return the head of the list.</span>
+<span class="c1">// The returned list must have no disorder in it!</span>
+<span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="nf">remove_disorder</span><span class="p">(</span><span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// WRITE YOUR CODE HERE (you may need to change the line below)</span>
+    <span class="k">return</span> <span class="n">head</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+
+
+<div class="alert alert-danger">
+<h5>This challenge does not provide comprehensive test cases</h5>
+<p>
+    You have been provided some autotests to check your output is sane,
+    and that it is in a correct format. Passing the autotests does not
+    guarantee that you have solved this challenge -- your own testing
+    will be required. You should check your program for edge cases.
+    </p>
+</div>
+<b>remove_disorder</b> is written using the following struct that cannot be changed:
+<p>
+</p><pre>struct node {
+    int data;
+    struct node *next;
+};
+</pre>
+<p>
+The <b>node</b> struct is a normal linked list node containing an integer.
+</p><p> 
+<b>remove_disorder</b> should take a pointer to the head of a <b>node</b> list
+and return the head of the <b>node</b> list after it has removed any disorder 
+in the list. A list is considered to have disorder if there are any nodes in it
+that are higher in value (using the integer data) than the node directly after
+them.
+</p><p>
+<b>remove_disorder</b> should remove nodes from the list, but otherwise make no
+changes to the list itself.
+</p><p>
+For example if the list of nodes looks like this:
+</p><pre>{1, 3, 2}
+</pre>
+<p>
+<b>remove_disorder</b> should return 
+</p><pre>{1, 2}
+</pre>
+<p>However, if the list looks like this:
+</p><pre>{2, 4, 5, 1}
+</pre>
+<p>
+<b>remove_disorder</b> should return 
+</p><pre>{1}
+</pre>
+The 5 is definitely removed for being higher than the 1. After that, the 4
+is then disordered because it is now next to the 1 and higher than it. Then, the
+2 must be removed because it will be next to the 1 and higher than it.
+<p>
+<b>remove_disorder</b> should always return a list with no disorder in it. If 
+any removals cause more disorder, these disordered <b>node</b>s must also be
+removed before <b>remove_disorder</b> returns.
+
+</p><h4>Assumptions/Restrictions/Clarifications.</h4>
+<p>
+<b>struct node</b> cannot be edited. It must be used as it is.
+</p><p>
+You may not use arrays in this solution. Arrays are not necessary to complete
+this task.
+</p><p>
+You can assume that you'll never receive an empty list of <b>node</b>s.
+
+
+
+
+
+</p><p>
+When you think your program is working you can  <code>autotest</code> to run some simple automated tests:
+
+</p><pre is="tty"><kbd is="sh">1511 autotest list_delete_ordered</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When you are finished working  on this exercise you must submit
+your work by running <b>give</b>:
+
+<pre is="tty"><kbd is="sh">give cs1511 test09_list_delete_ordered list_delete_ordered.c</kbd>
+</pre>
+
+
+
+    
+        
+        <div class="answer">
+            Sample solution for <code>list_delete_ordered.c</code>
+            
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+
+<span class="c1">// Do not edit this struct. You may use it exactly as</span>
+<span class="c1">// it is but you cannot make changes to it</span>
+
+<span class="c1">// A node in a linked list</span>
+<span class="k">struct</span> <span class="n">node</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">data</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// ADD ANY FUNCTION DECLARATIONS YOU WISH TO USE HERE</span>
+
+<span class="c1">// Remove any nodes in a list that are higher </span>
+<span class="c1">// than the node directly after them.</span>
+<span class="c1">// Return the head of the list.</span>
+<span class="c1">// The returned list must have no disorder in it!</span>
+<span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="nf">remove_disorder</span><span class="p">(</span><span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">exit</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    
+    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">exit</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">prev</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">remNode</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+
+        <span class="c1">// find a node that needs to be removed</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">remNode</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="o">&amp;&amp;</span> <span class="n">remNode</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="o">&amp;&amp;</span> <span class="n">remNode</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">&lt;=</span> <span class="n">remNode</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">prev</span> <span class="o">=</span> <span class="n">remNode</span><span class="p">;</span>
+            <span class="n">remNode</span> <span class="o">=</span> <span class="n">remNode</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">// remove that node if it was found</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">remNode</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="o">&amp;&amp;</span> <span class="n">remNode</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">prev</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// remNode is the first element of the list</span>
+                <span class="n">head</span> <span class="o">=</span> <span class="n">remNode</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">prev</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">remNode</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">free</span><span class="p">(</span><span class="n">remNode</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// there was no node to remove, which means the list</span>
+            <span class="c1">// has no disorder</span>
+            <span class="n">exit</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>    
+    <span class="k">return</span> <span class="n">head</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// These helper functions are for the main below and will</span>
+<span class="c1">// have no effect on your remove_disorder. They do not</span>
+<span class="c1">// need to be modified.</span>
+<span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="nf">make_list</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">printList</span><span class="p">(</span><span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">head</span><span class="p">);</span>
+
+<span class="c1">// This is a main function which could be used</span>
+<span class="c1">// to test your remove_disorder function.</span>
+<span class="c1">// It will not be marked.</span>
+<span class="c1">// Only your remove_disorder function will be marked.</span>
+<span class="c1">//</span>
+<span class="c1">// It's recommended to change the int values in this</span>
+<span class="c1">// main to test whether your remove_disorder is working.</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// test an ordered list</span>
+    <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">ordered</span> <span class="o">=</span> <span class="n">make_list</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+    <span class="n">ordered</span> <span class="o">=</span> <span class="n">remove_disorder</span><span class="p">(</span><span class="n">ordered</span><span class="p">);</span>
+    <span class="n">printList</span><span class="p">(</span><span class="n">ordered</span><span class="p">);</span>
+    
+    <span class="c1">// test removing one element out of order</span>
+    <span class="n">ordered</span> <span class="o">=</span> <span class="n">make_list</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="n">ordered</span> <span class="o">=</span> <span class="n">remove_disorder</span><span class="p">(</span><span class="n">ordered</span><span class="p">);</span>
+    <span class="n">printList</span><span class="p">(</span><span class="n">ordered</span><span class="p">);</span>
+    
+    <span class="c1">// test a completely disordered list</span>
+    <span class="n">ordered</span> <span class="o">=</span> <span class="n">make_list</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">ordered</span> <span class="o">=</span> <span class="n">remove_disorder</span><span class="p">(</span><span class="n">ordered</span><span class="p">);</span>
+    <span class="n">printList</span><span class="p">(</span><span class="n">ordered</span><span class="p">);</span>
+
+    <span class="c1">// test with the first removal causing more disorder</span>
+    <span class="n">ordered</span> <span class="o">=</span> <span class="n">make_list</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">ordered</span> <span class="o">=</span> <span class="n">remove_disorder</span><span class="p">(</span><span class="n">ordered</span><span class="p">);</span>
+    <span class="n">printList</span><span class="p">(</span><span class="n">ordered</span><span class="p">);</span>
+        
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// A simple function to make a linked list with 3 elements</span>
+<span class="c1">// This function is purely for the main above</span>
+<span class="c1">// You will be tested with lists that are more and less</span>
+<span class="c1">// than 3 elements long</span>
+<span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="nf">make_list</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">head</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span> <span class="p">(</span><span class="k">struct</span> <span class="n">node</span><span class="p">));</span>
+    <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">n</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+    <span class="n">n</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+    <span class="n">n</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span> <span class="p">(</span><span class="k">struct</span> <span class="n">node</span><span class="p">));</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+    <span class="n">n</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+    <span class="n">n</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span> <span class="p">(</span><span class="k">struct</span> <span class="n">node</span><span class="p">));</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+    <span class="n">n</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+    <span class="n">n</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    
+    <span class="k">return</span> <span class="n">head</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">printList</span><span class="p">(</span><span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">head</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%d "</span><span class="p">,</span> <span class="n">head</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">);</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// ADD ANY FUNCTION DEFINITIONS YOU WISH TO USE HERE</span>
+</pre></div>
+
+
+            
+        </div>
+    
+
+
+
+    </section>
+    
+
+
+
+</div>
+
+
+<section class="exercise ">
+    <header><h3>Submission</h3></header>
+    
+
+
+When you are finished each exercise make sure you submit your work by running <b>give</b>.
+<p>
+You can run <b>give</b> multiple times.
+Only your last submission will be marked.
+</p><p>
+Don't submit any exercises you haven't attempted.
+</p><p>
+If you are working at home, you may find it more convenient
+to upload your work via
+<a href="https://cgi.cse.unsw.edu.au/~give/Student/give.php">give's web interface</a>.
+</p><p>
+
+Remember you have until
+<b>Week 10 Thursday 21:00</b>
+to complete this test.
+</p><p>
+Automarking will be run by the lecturer several days after the submission deadline
+for the test, using test cases that you haven't seen:
+different to the test cases <code><kbd>autotest</kbd></code> runs for
+you.
+</p><p>
+(Hint: do your own testing as well as running
+<code><kbd>autotest</kbd></code>)
+</p><p>
+</p><h4>Test Marks</h4>
+<p>
+After automarking is run by the lecturer you can
+<a href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/student/">view it here</a>
+the resulting mark will also be available via
+<a href="https://cgi.cse.unsw.edu.au/~give/Student/sturec.php">via give's web interface</a>
+or by running this command on a CSE machine:
+
+</p><pre is="tty"><kbd is="sh">1511 classrun -sturec</kbd>
+</pre>
+
+<p>
+The test exercises for each week are worth in total 1 marks.
+</p><p>
+
+    The best 6 of your 7 test marks for weeks 3-10 (excluding week 6) will be summed to give you a mark out of 5.
+    The information here was previously incorrect, and has been fixed to line up with the course outline.
+
+
+
+    </p></section>
+
+
+
+
+
+
+</main>
+
+<footer class="mt-3 pt-3 bg-dark text-center no-print">
+<p class="text-muted">
+<strong>COMP1511 20T3: Programming Fundamentals</strong>
+is brought to you by <br>
+the <a href="https://www.cse.unsw.edu.au/">School of Computer Science and Engineering</a><br>
+at the <a href="https://www.unsw.edu.au/">University of New South Wales</a>, Sydney.<br>
+For all enquiries, please email the class account at
+<a href="mailto:@cse.unsw.edu.au">cs1511@cse.unsw.edu.au</a><br>
+
+<small>CRICOS Provider 00098G</small>
+</p>
+
+
+</footer>
+
+
+</body></html>

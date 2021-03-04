@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://cgi.cse.unsw.edu.au/~cs1511/20T3/lab/02/answers -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+    
+    COMP1511 20T3 - 
+Week 02
+Laboratory
+Sample Solutions
+
+    
+</title><link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/">
+
+<link rel="stylesheet" href="./COMP1511 20T3 - Week 02 Laboratory Sample Solutions_files/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="./COMP1511 20T3 - Week 02 Laboratory Sample Solutions_files/course.css">
+
+<script src="./COMP1511 20T3 - Week 02 Laboratory Sample Solutions_files/jquery.min.js.download" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="./COMP1511 20T3 - Week 02 Laboratory Sample Solutions_files/popper.min.js.download" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="./COMP1511 20T3 - Week 02 Laboratory Sample Solutions_files/bootstrap.min.js.download" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="./COMP1511 20T3 - Week 02 Laboratory Sample Solutions_files/course.js.download"></script>
+
+
+<link rel="icon" type="image/png" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/flask.cgi/static/favicon.ico?1271605745352.0">
+
+<!-- <script async src="https://static.codepen.io/assets/embed/ei.js"></script> -->
+
+<!-- MathJax. -->
+
+
+
+
+
+
+<style>
+body {
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='50px' width='220px'><text x='0' y='15' fill='red' font-size='20' opacity='0.2'>  [OLD - 20T3]  </text></svg>");
+}
+</style>
+
+<script type="text/javascript" async="" src="./COMP1511 20T3 - Week 02 Laboratory Sample Solutions_files/MathJax.js.download"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body class="d-flex flex-column vsc-initialized" style="min-height: 100vh;"><div id="MathJax_Message" style="display: none;"></div>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light no-print" id="header-navbar">
+  <div class="container">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navmenu" aria-controls="navmenu" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a class="navbar-brand" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/">
+      COMP1511 20T3
+    </a>
+
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active"><a class="nav-link" href="https://discourse.cse.unsw.edu.au/20t3/comp1511/">Forum</a></li>
+        <li class="nav-item active"><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/student/">Submissions</a></li>
+        <li class="nav-item active"><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/history/">History</a></li>
+
+        
+        <li class="nav-item active"><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass1/index.html">Assignment 1</a></li>
+        
+
+        
+        <li class="nav-item active"><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html">Assignment 2</a></li>
+        
+
+        <li class="navbar-text px-2">|</li>
+        
+
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+            
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+
+
+<li class="nav-item active dropdown">
+  <a role="button" class="nav-link dropdown-toggle" id="week-selector" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/lab/02/answers#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Week 02 <span class="caret"></span>
+  </a>
+  <div class="dropdown-menu" aria-labelledby="week-selector">
+  
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/lab/01/answers">Week 01</a>
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/lab/02/answers">Week 02</a>
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/lab/03/answers">Week 03</a>
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/lab/04/answers">Week 04</a>
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/lab/05/answers">Week 05</a>
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/lab/06/answers">Week 06 (tutors only)</a>
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/lab/07/answers">Week 07</a>
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/lab/08/answers">Week 08</a>
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/lab/09/answers">Week 09</a>
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/lab/10/answers">Week 10</a>
+  </div>
+</li>
+
+
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+
+
+<li class="nav-item active dropdown">
+  <a role="button" class="nav-link dropdown-toggle" id="tlb-selector" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/lab/02/answers#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Laboratory <span class="caret"></span>
+  </a>
+  <div class="dropdown-menu" aria-labelledby="tlb-selector">
+  
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/tut/02/answers">Tutorial</a>
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/lab/02/answers">Laboratory</a>
+  </div>
+</li>
+
+
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+<li class="nav-item active dropdown">
+  <a role="button" class="nav-link dropdown-toggle" id="qa-selector" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/lab/02/answers#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Sample Solutions <span class="caret"></span>
+  </a>
+  <div class="dropdown-menu" aria-labelledby="qa-selector">
+  
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/lab/02/questions">Exercises</a>
+    <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/lab/02/answers">Sample Solutions</a>
+  </div>
+</li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<main class="container" aria-label="Content" style="flex: 1; padding-top: 4rem;">
+
+
+<header>
+
+<h1 class="text-center">
+Week 02
+Laboratory
+Sample Solutions
+</h1>
+
+</header>
+
+
+<div class="tutlab lab">
+
+
+
+
+<section class="exercise ">
+    <header><h3>Objectives</h3></header>
+    
+
+<ul>
+
+<li>using C input/output (I/O) facilities</li>
+
+<li>creating simple arithmetic expressions</li>
+
+<li>programming with <code>if</code> statements</li>
+
+<li>creating relational expressions</li>
+
+<li>displaying varying strings</li>
+
+</ul>
+
+
+    </section>
+
+
+
+<section class="exercise ">
+    <header><h3>Preparation</h3></header>
+    
+
+
+<p>
+Before the lab you should re-read the relevant lecture slides and their accompanying examples.
+
+
+
+    </p></section>
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+    
+
+
+<section class="exercise with-pair">
+    <header><h3><small style="font-variant: small-caps; text-transform: lowercase;">Exercise — in pairs:
+    </small><br>Don't Be So Negative!</h3></header>
+    
+
+
+
+
+
+
+
+
+
+<p>Now create and open a new file called <code>negative.c</code> for this exercise.</p>
+<pre is="tty"><kbd is="sh">gedit negative.c &amp;</kbd>
+</pre>
+<p>Write a program that uses <code>scanf</code> to get a number from a user and prints
+"Don't be so negative!" if they entered a negative number.<br>
+If the number is positive, the program should print "You have entered a positive number."<br>
+If the user enters the number 0, the program should print
+"You have entered zero."<br>
+Note: you can assume that the number will always be a whole number (i.e. an integer)<br>
+Your program should behave as follows:</p>
+<pre is="tty"><kbd is="sh">dcc -o negative negative.c</kbd>
+<kbd is="sh">./negative</kbd>
+<kbd>3</kbd>
+You have entered a positive number.
+<kbd is="sh">./negative</kbd>
+<kbd>-3</kbd>
+Don't be so negative!
+<kbd is="sh">./negative</kbd>
+<kbd>0</kbd>
+You have entered zero.
+</pre>
+
+
+
+
+
+
+
+
+
+<div class="alert alert-info">
+<strong>New!</strong>
+You can run an automated code style checker using the following command:
+
+<pre is="tty"><kbd is="sh">1511 style negative.c</kbd>
+</pre>
+</div>
+
+
+
+
+<p>
+When you think your program is working,
+you can use <code>autotest</code>
+to run some simple automated tests:
+
+</p><pre is="tty"><kbd is="sh">1511 autotest negative</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+When you are finished working on this exercise,
+
+you and your lab partner must both
+
+submit your work by running <code>give</code>:
+
+</p><pre is="tty"><kbd is="sh">give cs1511 lab02_negative negative.c</kbd>
+</pre>
+
+<p>
+
+Note, even though this is a pair exercise,
+you both must run <code>give</code> from your own account
+
+before <strong>Monday 28 September 2020 20:00</strong>
+to obtain the marks for this lab exercise.
+
+
+
+
+
+
+    
+        
+        
+            
+            </p><div class="answer">
+                Sample solution for <code>negative.c</code>
+                
+<div class="highlight"><pre><span></span><span class="c1">// Read in a number, and determine whether it is negative.</span>
+<span class="c1">// If the number is positive, print "You have entered a positive number"</span>
+<span class="c1">// If the number is a zero, print "You have entered zero".</span>
+<span class="c1">// If the number is negative, print "Don't be so negative!"</span>
+<span class="c1">// Sample solution.</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num</span><span class="p">;</span>
+
+    <span class="c1">// Read in a number.</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">num</span><span class="p">);</span>
+
+    <span class="c1">// Print the relevant message.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"You have entered a positive number.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"You have entered zero.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"Don't be so negative!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+                
+            </div>
+            
+        
+    
+
+
+
+    </section>
+
+ 
+
+
+
+
+
+
+    
+
+
+<section class="exercise with-pair">
+    <header><h3><small style="font-variant: small-caps; text-transform: lowercase;">Exercise — in pairs:
+    </small><br>Addition</h3></header>
+    
+
+
+
+
+
+
+
+
+
+<p>Create a program called <code>addition.c</code>.
+</p><p>
+This program should ask for two integers
+using the message
+<code>Please enter two integers: </code>
+ and then display the sum of the integers as
+<code><kbd><i>a</i></kbd> + <kbd><i>b</i></kbd> = <kbd><i>sum</i></kbd></code>.</p>
+<p class="alert alert-warning">Make sure to replace the <strong><em>a</em></strong> and <strong><em>b</em></strong> with the numbers entered
+in the same order
+and the <strong><em>sum</em></strong> with the sum of the two numbers.</p>
+<h4>Some Examples</h4>
+<pre is="tty"><kbd is="sh">./addition</kbd>
+Please enter two integers: <kbd>2 5</kbd>
+2 + 5 = 7
+</pre>
+<pre is="tty"><kbd is="sh">./addition</kbd>
+Please enter two integers: <kbd>3 5</kbd>
+3 + 5 = 8
+</pre>
+<pre is="tty"><kbd is="sh">./addition</kbd>
+Please enter two integers: <kbd>-1 5</kbd>
+-1 + 5 = 4
+</pre>
+<p></p>
+
+
+
+
+
+
+
+
+
+<div class="alert alert-info">
+<strong>New!</strong>
+You can run an automated code style checker using the following command:
+
+<pre is="tty"><kbd is="sh">1511 style addition.c</kbd>
+</pre>
+</div>
+
+
+
+
+<p>
+When you think your program is working,
+you can use <code>autotest</code>
+to run some simple automated tests:
+
+</p><pre is="tty"><kbd is="sh">1511 autotest addition</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+When you are finished working on this exercise,
+
+you and your lab partner must both
+
+submit your work by running <code>give</code>:
+
+</p><pre is="tty"><kbd is="sh">give cs1511 lab02_addition addition.c</kbd>
+</pre>
+
+<p>
+
+Note, even though this is a pair exercise,
+you both must run <code>give</code> from your own account
+
+before <strong>Monday 28 September 2020 20:00</strong>
+to obtain the marks for this lab exercise.
+
+
+
+
+
+
+    
+        
+        
+            
+            </p><div class="answer">
+                Sample solution for <code>addition.c</code>
+                
+<div class="highlight"><pre><span></span><span class="c1">// A program to calculate the sum of two integers.</span>
+<span class="c1">// Sample solution.</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Make two integers to store the scanned-in values.</span>
+    <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
+
+    <span class="c1">// Get the two numbers from the user.</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Please enter two integers: "</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%d %d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">);</span>
+
+    <span class="c1">// Calculate the sum of the two numbers, and store it in a variable.</span>
+    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span>
+
+    <span class="c1">// Print out the sum of the two numbers.</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%d + %d = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sum</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+                
+            </div>
+            
+        
+    
+
+
+
+    </section>
+
+ 
+
+
+
+
+
+
+    
+
+
+<section class="exercise with-pair">
+    <header><h3><small style="font-variant: small-caps; text-transform: lowercase;">Exercise — in pairs:
+    </small><br>Numbers to Words</h3></header>
+    
+
+
+
+
+
+
+
+
+
+<p>
+Make a program called <code>numberWords.c</code>.
+</p><p>
+This program will ask for a number
+with the message
+<code>Please enter an integer: </code>.
+</p><p>
+For numbers between 1 and 5,
+display the number as a word in the message
+<code>You entered <kbd><i>number</i></kbd></code>.
+</p><p>
+For numbers less than 1,
+display the message
+<code>You entered a number less than one.</code>
+</p><p>
+For numbers greater than 5,
+display the message
+<code>You entered a number greater than five.</code></p>
+
+<h4>Some Examples</h4>
+
+<pre is="tty"><kbd is="sh">./numberWords</kbd>
+Please enter an integer: <kbd>2</kbd>
+You entered two.
+</pre>
+
+<pre is="tty"><kbd is="sh">./numberWords</kbd>
+Please enter an integer: <kbd>5</kbd>
+You entered five.
+</pre>
+
+<pre is="tty"><kbd is="sh">./numberWords</kbd>
+Please enter an integer: <kbd>0</kbd>
+You entered a number less than one.
+</pre>
+
+<pre is="tty"><kbd is="sh">./numberWords</kbd>
+Please enter an integer: <kbd>1000</kbd>
+You entered a number greater than five.
+</pre>
+
+<p>This exercise is designed you give you practice using if statements. 
+There are more efficient ways to solve this exercise which we will learn about in later weeks.
+Please only use content which we have covered in the course so far for this exericse.</p>
+
+
+
+
+
+
+
+
+
+<div class="alert alert-info">
+<strong>New!</strong>
+You can run an automated code style checker using the following command:
+
+<pre is="tty"><kbd is="sh">1511 style numberWords.c</kbd>
+</pre>
+</div>
+
+
+
+
+<p>
+When you think your program is working,
+you can use <code>autotest</code>
+to run some simple automated tests:
+
+</p><pre is="tty"><kbd is="sh">1511 autotest numberWords</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+When you are finished working on this exercise,
+
+you and your lab partner must both
+
+submit your work by running <code>give</code>:
+
+</p><pre is="tty"><kbd is="sh">give cs1511 lab02_numberWords numberWords.c</kbd>
+</pre>
+
+<p>
+
+Note, even though this is a pair exercise,
+you both must run <code>give</code> from your own account
+
+before <strong>Monday 28 September 2020 20:00</strong>
+to obtain the marks for this lab exercise.
+
+
+
+
+
+
+    
+        
+        
+            
+            </p><div class="answer">
+                Sample solution for <code>numberWords.c</code>
+                
+<div class="highlight"><pre><span></span><span class="c1">// Print out the written form of a given number between 1 and 5.</span>
+<span class="c1">// A sample solution.</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num</span><span class="p">;</span>
+
+    <span class="c1">// Read in the number.</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Please enter an integer: "</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">num</span><span class="p">);</span>
+
+    <span class="c1">// Start by printing "You entered ", since all of the variations</span>
+    <span class="c1">// start with that.</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"You entered "</span><span class="p">);</span>
+
+    <span class="c1">// Print out the appropriate number or message.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"a number less than one"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"one"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"two"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"three"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"four"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"five"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"a number greater than five"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Print the full stop at the end.</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">".</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+                
+            </div>
+            
+        
+    
+
+
+
+    </section>
+
+ 
+
+
+
+
+
+
+    
+
+
+<section class="exercise with-pair">
+    <header><h3><small style="font-variant: small-caps; text-transform: lowercase;">Exercise — in pairs:
+    </small><br>Leap Year Calculator</h3></header>
+    
+
+
+
+
+
+
+
+
+
+<p>
+Write a C program <code>is_leap_year.c</code> that reads a year
+and then
+prints whether that year is a <a href="http://en.wikipedia.org/wiki/Leap_year#Algorithm">leap year</a>.
+</p><p>
+</p><div class="alert alert-info">
+    Make sure you click on
+    <a href="http://en.wikipedia.org/wiki/Leap_year#Algorithm">
+        the link above</a>
+    to learn how to determine leap years!
+</div>
+
+<p>
+Match the examples below exactly
+</p><p>
+Hint: you only need use the <b>int</b> type, modulus (<b>%</b>) and <b>if</b> statement(s).
+</p><p>
+For example:
+</p><p>
+</p><pre is="tty"><kbd is="sh">dcc -o is_leap_year is_leap_year.c</kbd>
+<kbd is="sh">./is_leap_year</kbd>
+Enter year: <kbd>2017</kbd>
+2017 is not a leap year.
+<kbd is="sh">./is_leap_year</kbd>
+Enter year: <kbd>2016</kbd>
+2016 is a leap year.
+<kbd is="sh">./is_leap_year</kbd>
+Enter year: <kbd>2000</kbd>
+2000 is a leap year.
+<kbd is="sh">./is_leap_year</kbd>
+Enter year: <kbd>3000</kbd>
+3000 is not a leap year.
+</pre>
+
+
+
+
+
+
+
+
+
+<div class="alert alert-info">
+<strong>New!</strong>
+You can run an automated code style checker using the following command:
+
+<pre is="tty"><kbd is="sh">1511 style is_leap_year.c</kbd>
+</pre>
+</div>
+
+
+
+
+<p>
+When you think your program is working,
+you can use <code>autotest</code>
+to run some simple automated tests:
+
+</p><pre is="tty"><kbd is="sh">1511 autotest is_leap_year</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+When you are finished working on this exercise,
+
+you and your lab partner must both
+
+submit your work by running <code>give</code>:
+
+</p><pre is="tty"><kbd is="sh">give cs1511 lab02_is_leap_year is_leap_year.c</kbd>
+</pre>
+
+<p>
+
+Note, even though this is a pair exercise,
+you both must run <code>give</code> from your own account
+
+before <strong>Monday 28 September 2020 20:00</strong>
+to obtain the marks for this lab exercise.
+
+
+
+
+
+
+    
+        
+        
+            
+            </p><div class="answer">
+                Sample solution for <code>is_leap_year.c</code>
+                
+<div class="highlight"><pre><span></span><span class="c1">// Modified 3/3/2017 by Andrew Taylor (andrewt@unsw.edu.au)</span>
+<span class="c1">// as a lab example for COMP1511</span>
+
+<span class="c1">// Test if a year is leap year</span>
+<span class="c1">// https://en.wikipedia.org/wiki/Leap_year</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">year</span><span class="p">;</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Enter year: "</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">year</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%d is a leap year.</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">year</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%d is not a leap year.</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">year</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+                
+                    Alternative solution for <code>is_leap_year.c</code>
+                    
+<div class="highlight"><pre><span></span><span class="c1">// Modified by Finbar Berkon (finbar.berkon@unsw.edu.au)</span>
+<span class="c1">// from https://en.wikipedia.org/wiki/Leap_year#Algorithm</span>
+<span class="c1">// on 16/6/2019</span>
+
+<span class="c1">// Test if a year is a leap year with a simple series of if statements</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">year</span><span class="p">;</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Enter year: "</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">year</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%d is not a leap year.</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">year</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%d is a leap year.</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">year</span><span class="p">);</span> 
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%d is not a leap year.</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">year</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%d is a leap year.</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">year</span><span class="p">);</span> 
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+                
+            </div>
+            
+        
+    
+
+
+
+    </section>
+
+ 
+
+
+
+
+
+
+    
+
+
+<section class="exercise with-self">
+    <header><h3><small style="font-variant: small-caps; text-transform: lowercase;">Challenge Exercise — individual:
+    </small><br>Dice Range</h3></header>
+    
+
+
+
+
+
+
+
+
+
+We will often roll multiple dice at the same time. 
+<p>
+Write a C program <code>dice_range.c</code> that reads the number of sides on a set of dice and how many of them are being rolled.
+It then outputs the range of possible totals that these dice can produce as well as the average value.
+</p><p>
+Hint: use the examples below to clarify the expected behaviour of your program.
+</p><p>
+For example:
+
+</p><pre is="tty"><kbd is="sh">dcc -o dice_range dice_range.c</kbd>
+<kbd is="sh">./dice_range</kbd>
+Enter the number of sides on your dice: <kbd>6</kbd>
+Enter the number of dice being rolled: <kbd>2</kbd>
+Your dice range is 2 to 12. 
+The average value is 7.000000
+<kbd is="sh">./dice_range</kbd>
+Enter the number of sides on your dice: <kbd>8</kbd>
+Enter the number of dice being rolled: <kbd>3</kbd>
+Your dice range is 3 to 24.
+The average value is 13.500000
+<kbd is="sh">./dice_range</kbd>
+Enter the number of sides on your dice: <kbd>20</kbd>
+Enter the number of dice being rolled: <kbd>4</kbd>
+Your dice range is 4 to 80. 
+The average value is 42.000000
+</pre>
+
+You'll also need to check for invalid dice or situations where the range is empty. Those situations should produce these results:
+<pre is="tty"><kbd is="sh">./dice_range</kbd>
+Enter the number of sides on your dice: <kbd>-5</kbd>
+Enter the number of dice being rolled: <kbd>4</kbd>
+These dice will not produce a range.
+<kbd is="sh">./dice_range</kbd>
+Enter the number of sides on your dice: <kbd>6</kbd>
+Enter the number of dice being rolled: <kbd>0</kbd>
+These dice will not produce a range.</pre>
+
+
+
+
+
+
+
+
+
+<div class="alert alert-info">
+<strong>New!</strong>
+You can run an automated code style checker using the following command:
+
+<pre is="tty"><kbd is="sh">1511 style dice_range.c</kbd>
+</pre>
+</div>
+
+
+
+
+<p>
+When you think your program is working,
+you can use <code>autotest</code>
+to run some simple automated tests:
+
+</p><pre is="tty"><kbd is="sh">1511 autotest dice_range</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+When you are finished working on this exercise,
+
+you must
+
+submit your work by running <code>give</code>:
+
+</p><pre is="tty"><kbd is="sh">give cs1511 lab02_dice_range dice_range.c</kbd>
+</pre>
+
+<p>
+
+You must run <code>give</code>
+
+before <strong>Monday 28 September 2020 20:00</strong>
+to obtain the marks for this lab exercise.
+
+
+Note that this is an individual exercise,
+the work you submit with <code>give</code> must be entirely your own.
+
+
+
+
+
+    
+        
+        
+            
+            </p><div class="answer">
+                Sample solution for <code>dice_range.c</code>
+                
+<div class="highlight"><pre><span></span><span class="c1">// Show the dice range of a set of dice as well</span>
+<span class="c1">// as their average roll</span>
+<span class="c1">// Created 7/6/2019 by Marc Chee (marc.chee@unsw.edu.au)</span>
+<span class="c1">// as a lab challenge</span>
+
+<span class="c1">// Note this program doesn't check whether</span>
+<span class="c1">// the scanf call successfully reads a number.</span>
+<span class="c1">// This is good practice but was not requested in the lab exercise</span>
+<span class="c1">// because this isn't covered until later in the course.</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">diceSize</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">numDice</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">lowest</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">highest</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">average</span><span class="p">;</span>
+    
+    <span class="c1">// scan in dice stats</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Enter the number of sides on your dice: "</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">diceSize</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Enter the number of dice being rolled: "</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">numDice</span><span class="p">);</span>
+
+    <span class="c1">// calculate lowest and highest values</span>
+    <span class="n">lowest</span> <span class="o">=</span> <span class="n">numDice</span><span class="p">;</span>
+    <span class="n">highest</span> <span class="o">=</span> <span class="n">numDice</span> <span class="o">*</span> <span class="n">diceSize</span><span class="p">;</span>
+    
+    <span class="c1">// calculate average. The 2.0 makes the result a double</span>
+    <span class="n">average</span> <span class="o">=</span> <span class="p">(</span><span class="n">lowest</span> <span class="o">+</span> <span class="n">highest</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">;</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">diceSize</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">highest</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"These dice will not produce a range.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"Your dice range is %d to %d.</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">lowest</span><span class="p">,</span> <span class="n">highest</span><span class="p">);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"The average value is %lf</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">average</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+                
+            </div>
+            
+        
+    
+
+
+
+    </section>
+
+ 
+
+
+
+
+
+
+    
+
+
+<section class="exercise with-self">
+    <header><h3><small style="font-variant: small-caps; text-transform: lowercase;">Challenge Exercise — individual:
+    </small><br>Word Addition</h3></header>
+    
+
+
+
+
+
+
+
+
+
+<p>Create a program called <code>wordAddition.c</code>.
+</p><p class="alert alert-danger">For this challenge exercise, you can <b>only use the topics that we've covered in the course thus far</b> (if/elseif/else, printf, scanf, ints).</p>
+<p>
+This program should ask for two integers
+using the message
+<code>Please enter two integers: </code>
+ and then display the sum of the integers as
+<code><kbd><i>n</i></kbd> + <kbd><i>n</i></kbd> = <kbd><i>sum</i></kbd></code>.</p>
+
+<p>Any numbers that are between zero and ten should appear as words.
+This also applies to negative numbers between negative ten and zero.
+All other numbers should appear as decimal integers.</p>
+
+<p class="alert alert-warning">Make sure to replace the <strong><em>n</em></strong> with the numbers entered
+in the same order
+and the <strong><em>sum</em></strong> with the sum of the two numbers.</p>
+
+<h4>Some Examples</h4>
+
+<pre is="tty"><kbd is="sh">./wordAddition</kbd>
+Please enter two integers: <kbd>2 5</kbd>
+two + five = seven
+</pre>
+
+<pre is="tty"><kbd is="sh">./wordAddition</kbd>
+Please enter two integers: <kbd>3 0</kbd>
+three + zero = three
+</pre>
+
+<pre is="tty"><kbd is="sh">./wordAddition</kbd>
+Please enter two integers: <kbd>-1 5</kbd>
+negative one + five = four
+</pre>
+
+<pre is="tty"><kbd is="sh">./wordAddition</kbd>
+Please enter two integers: <kbd>10 5</kbd>
+ten + five = 15
+</pre>
+
+
+
+
+
+
+
+
+
+<div class="alert alert-info">
+<strong>New!</strong>
+You can run an automated code style checker using the following command:
+
+<pre is="tty"><kbd is="sh">1511 style wordAddition.c</kbd>
+</pre>
+</div>
+
+
+
+
+<p>
+When you think your program is working,
+you can use <code>autotest</code>
+to run some simple automated tests:
+
+</p><pre is="tty"><kbd is="sh">1511 autotest wordAddition</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+When you are finished working on this exercise,
+
+you must
+
+submit your work by running <code>give</code>:
+
+</p><pre is="tty"><kbd is="sh">give cs1511 lab02_wordAddition wordAddition.c</kbd>
+</pre>
+
+<p>
+
+You must run <code>give</code>
+
+before <strong>Monday 28 September 2020 20:00</strong>
+to obtain the marks for this lab exercise.
+
+
+Note that this is an individual exercise,
+the work you submit with <code>give</code> must be entirely your own.
+
+
+
+
+
+    
+        
+        
+            
+            </p><div class="answer">
+                Sample solution for <code>wordAddition.c</code>
+                
+<div class="highlight"><pre><span></span><span class="c1">// Word Addition -- a sample solution.</span>
+<span class="c1">// Add two numbers and print them out, as words.</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Please enter two integers: "</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%d %d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">num1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">num2</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="p">;</span>
+
+    <span class="c1">// First, deal with num1.</span>
+    <span class="c1">// Is it between -10 and 10?</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">num1</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">10</span> <span class="o">&amp;&amp;</span> <span class="n">num1</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Is it negative?</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num1</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"negative "</span><span class="p">);</span>
+            <span class="n">num1</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">// Print out whatever the digit is.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"zero"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"one"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num1</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"two"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num1</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"three"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num1</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"four"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num1</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"five"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num1</span> <span class="o">==</span> <span class="mi">6</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"six"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num1</span> <span class="o">==</span> <span class="mi">7</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"seven"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num1</span> <span class="o">==</span> <span class="mi">8</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"eight"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num1</span> <span class="o">==</span> <span class="mi">9</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"nine"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num1</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"ten"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// It wasn't between -10 and 10, so print out the number as is.</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="n">num1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Now, print out the plus sign...</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">" + "</span><span class="p">);</span>
+
+    <span class="c1">// Now, deal with num2</span>
+    <span class="c1">// Is it between -10 and 10?</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">num2</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">10</span> <span class="o">&amp;&amp;</span> <span class="n">num2</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Is it negative?</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num2</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"negative "</span><span class="p">);</span>
+            <span class="n">num2</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">// Print out whatever the digit is</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"zero"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"one"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num2</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"two"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num2</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"three"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num2</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"four"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num2</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"five"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num2</span> <span class="o">==</span> <span class="mi">6</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"six"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num2</span> <span class="o">==</span> <span class="mi">7</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"seven"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num2</span> <span class="o">==</span> <span class="mi">8</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"eight"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num2</span> <span class="o">==</span> <span class="mi">9</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"nine"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num2</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"ten"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// It wasn't between -10 and 10, so print out the number as is.</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="n">num2</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Now, print the equals sign.</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">" = "</span><span class="p">);</span>
+
+
+    <span class="c1">// Now, deal with the sum</span>
+    <span class="c1">// Is it between -10 and 10?</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">10</span> <span class="o">&amp;&amp;</span> <span class="n">sum</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Is it negative?</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"negative "</span><span class="p">);</span>
+            <span class="n">sum</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">// Print out whatever the digit is.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"zero</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"one</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"two</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"three</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"four</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"five</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">==</span> <span class="mi">6</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"six</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">==</span> <span class="mi">7</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"seven</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">==</span> <span class="mi">8</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"eight</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">==</span> <span class="mi">9</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"nine</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"ten</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// It wasn't between -10 and 10, so print out the number as is.</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">sum</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+                
+            </div>
+            
+        
+    
+
+
+
+    </section>
+
+ 
+
+
+
+
+
+
+    
+
+
+<section class="exercise with-self">
+    <header><h3><small style="font-variant: small-caps; text-transform: lowercase;">Challenge Exercise — individual:
+    </small><br>Easter</h3></header>
+    
+
+
+
+
+
+
+
+
+
+Write a program <code>easter.c</code> which allows the user to enter a year,
+then calculates the date of Easter Sunday for that year.
+Use the formula developed in 1876 by
+<a href="https://www.drupal.org/node/1180480">Samuel Butcher, Bishop of Meath,</a>.
+<p>
+Follow the output format in in the example below <b>exactly</b>:
+</p><p>
+
+</p><pre is="tty"><kbd is="sh">dcc easter.c -o easter</kbd>
+<kbd is="sh">./easter</kbd>
+Enter year: <kbd>2017</kbd>
+Easter is April 16 in 2017.
+<kbd is="sh">./easter</kbd>
+Enter year: <kbd>2018</kbd>
+Easter is April 1 in 2018.
+<kbd is="sh">./easter</kbd>
+Enter year: <kbd>2019</kbd>
+Easter is April 21 in 2019.
+</pre>
+
+<h4>Hints</h4>
+
+Cut-and-paste the formula from <a href="https://www.drupal.org/node/1180480">the above Web site</a> and then fill in the C program around it.
+<p>
+Make sure every variable is declared.
+</p><p>
+Make sure  every statement ends with a semicolon.
+</p><div class="alert alert-info">
+        <p>Note that the original proposal of this formula had only single letter variable names, and no explanation of how it works.</p>
+        <p>Because of this, even though we know <i>that</i> it works, no-one knows <i>how</i> it works.</p>
+        <p>Make sure to always comment your code and have sensible variable names so that people can understand how your code works!</p>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="alert alert-info">
+<strong>New!</strong>
+You can run an automated code style checker using the following command:
+
+<pre is="tty"><kbd is="sh">1511 style easter.c</kbd>
+</pre>
+</div>
+
+
+
+
+<p>
+When you think your program is working,
+you can use <code>autotest</code>
+to run some simple automated tests:
+
+</p><pre is="tty"><kbd is="sh">1511 autotest easter</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+When you are finished working on this exercise,
+
+you must
+
+submit your work by running <code>give</code>:
+
+</p><pre is="tty"><kbd is="sh">give cs1511 lab02_easter easter.c</kbd>
+</pre>
+
+<p>
+
+You must run <code>give</code>
+
+before <strong>Monday 28 September 2020 20:00</strong>
+to obtain the marks for this lab exercise.
+
+
+Note that this is an individual exercise,
+the work you submit with <code>give</code> must be entirely your own.
+
+
+
+
+
+    
+        
+        
+            
+            </p><div class="answer">
+                Sample solution for <code>easter.c</code>
+                
+<div class="highlight"><pre><span></span><span class="c1">// Compute Easter Sunday date</span>
+<span class="c1">// Modified 3/3/2019 by Andrew Taylor (andrewt@unsw.edu.au)</span>
+<span class="c1">// as a lab example for COMP1511</span>
+
+<span class="c1">// code for Butcher's Formula copied from</span>
+<span class="c1">// http://smart.net/~mmontes/nature1876.html</span>
+
+<span class="c1">// Note this program doesn't check whether</span>
+<span class="c1">// the scanf call successfully reads a number.</span>
+<span class="c1">// This is good practice but was not requested in the lab exercise</span>
+<span class="c1">// because this isn't covered until later in COMP1511.</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">p</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">date</span><span class="p">;</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Enter year: "</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">year</span><span class="p">);</span>
+
+    <span class="n">a</span> <span class="o">=</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">19</span><span class="p">;</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">year</span> <span class="o">/</span> <span class="mi">100</span><span class="p">;</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">100</span><span class="p">;</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">b</span> <span class="o">/</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="n">b</span> <span class="o">%</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="mi">8</span><span class="p">)</span> <span class="o">/</span> <span class="mi">25</span><span class="p">;</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">f</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="mi">19</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">-</span> <span class="n">d</span> <span class="o">-</span> <span class="n">g</span> <span class="o">+</span> <span class="mi">15</span><span class="p">)</span> <span class="o">%</span> <span class="mi">30</span><span class="p">;</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">c</span> <span class="o">/</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">c</span> <span class="o">%</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="p">(</span><span class="mi">32</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">e</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">-</span> <span class="n">h</span> <span class="o">-</span> <span class="n">k</span><span class="p">)</span> <span class="o">%</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">11</span> <span class="o">*</span> <span class="n">h</span> <span class="o">+</span> <span class="mi">22</span> <span class="o">*</span> <span class="n">l</span><span class="p">)</span> <span class="o">/</span> <span class="mi">451</span><span class="p">;</span>
+    <span class="n">month</span> <span class="o">=</span> <span class="p">(</span><span class="n">h</span> <span class="o">+</span> <span class="n">l</span> <span class="o">-</span> <span class="mi">7</span> <span class="o">*</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">114</span><span class="p">)</span> <span class="o">/</span> <span class="mi">31</span><span class="p">;</span>  <span class="c1">//  [3=March, 4=April]</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="n">h</span> <span class="o">+</span> <span class="n">l</span> <span class="o">-</span> <span class="mi">7</span> <span class="o">*</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">114</span><span class="p">)</span> <span class="o">%</span> <span class="mi">31</span><span class="p">;</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// (date in Easter Month)</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Easter is "</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">month</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"March"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"April"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">" %d in %d.</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">year</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+                
+            </div>
+            
+        
+    
+
+
+
+    </section>
+
+
+
+
+
+<section class="exercise ">
+    <header><h3>Submission</h3></header>
+    
+
+
+When you are finished each exercises make sure you submit your work by running <code>give</code>.
+<p>
+You can run <code>give</code> multiple times.
+Only your last submission will be marked.
+</p><p>
+Don't submit any exercises you haven't attempted.
+</p><p>
+If you are working at home, you may find it more convenient
+to upload your work via
+<a href="https://cgi.cse.unsw.edu.au/~give/Student/give.php">give's web interface</a>.
+</p><p>
+Remember you have until
+
+<b>Week 3 Monday 20:00</b>
+
+to submit your work.
+</p><p>
+You cannot obtain marks by e-mailing your code to tutors or lecturers.
+</p><p>
+You check the files you have submitted <a href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/student/">here</a>.
+</p><p>
+Automarking will be run by the lecturer several days after the submission deadline,
+using test cases different to those <code>autotest</code> runs for you.
+(Hint: do your own testing as well as running <code>autotest</code>.)
+</p><p>
+After automarking is run by the lecturer
+you can <a href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/student/">view your results here</a>.
+The resulting mark will also be available
+<a href="https://cgi.cse.unsw.edu.au/~give/Student/sturec.php">via give's web interface</a>.
+
+</p><h4>Lab Marks</h4>
+<p>
+When all components of a lab  are automarked you should be able to view the
+the marks <a href="https://cgi.cse.unsw.edu.au/~give/Student/sturec.php">via give's web interface</a>
+or by running this command on a CSE machine:
+
+</p><pre is="tty"><kbd is="sh">1511 classrun -sturec</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+</div>
+
+
+
+</main>
+
+<footer class="mt-3 pt-3 bg-dark text-center no-print">
+<p class="text-muted">
+<strong>COMP1511 20T3: Programming Fundamentals</strong>
+is brought to you by <br>
+the <a href="https://www.cse.unsw.edu.au/">School of Computer Science and Engineering</a><br>
+at the <a href="https://www.unsw.edu.au/">University of New South Wales</a>, Sydney.<br>
+For all enquiries, please email the class account at
+<a href="mailto:@cse.unsw.edu.au">cs1511@cse.unsw.edu.au</a><br>
+
+<small>CRICOS Provider 00098G</small>
+</p>
+
+
+</footer>
+
+
+</body></html>

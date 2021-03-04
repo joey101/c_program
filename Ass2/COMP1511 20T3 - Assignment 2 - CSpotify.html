@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+    
+    COMP1511 20T3 - 
+Assignment 2 - CSpotify
+
+    
+</title><link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/">
+
+<link rel="stylesheet" href="./COMP1511 20T3 - Assignment 2 - CSpotify_files/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="./COMP1511 20T3 - Assignment 2 - CSpotify_files/course.css">
+
+<script src="./COMP1511 20T3 - Assignment 2 - CSpotify_files/jquery.min.js.download" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="./COMP1511 20T3 - Assignment 2 - CSpotify_files/popper.min.js.download" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="./COMP1511 20T3 - Assignment 2 - CSpotify_files/bootstrap.min.js.download" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="./COMP1511 20T3 - Assignment 2 - CSpotify_files/course.js.download"></script>
+
+
+<link rel="icon" type="image/png" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/flask.cgi/static/favicon.ico?1271605745352.0">
+
+<!-- <script async src="https://static.codepen.io/assets/embed/ei.js"></script> -->
+
+<!-- MathJax. -->
+
+
+
+<link rel="stylesheet" href="./COMP1511 20T3 - Assignment 2 - CSpotify_files/bootstrap-toc.min.css">
+<!-- add after bootstrap.min.js -->
+<script src="./COMP1511 20T3 - Assignment 2 - CSpotify_files/bootstrap-toc.min.js.download"></script>
+
+
+
+<style>
+body {
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='50px' width='220px'><text x='0' y='15' fill='red' font-size='20' opacity='0.2'>  [OLD - 20T3]  </text></svg>");
+}
+</style>
+
+<script type="text/javascript" async="" src="./COMP1511 20T3 - Assignment 2 - CSpotify_files/MathJax.js.download"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body class="d-flex flex-column vsc-initialized" style="min-height: 100vh;"><div id="MathJax_Message" style="display: none;"></div>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light no-print" id="header-navbar">
+  <div class="container">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navmenu" aria-controls="navmenu" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a class="navbar-brand" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/">
+      COMP1511 20T3
+    </a>
+
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active"><a class="nav-link" href="https://discourse.cse.unsw.edu.au/20t3/comp1511/">Forum</a></li>
+        <li class="nav-item active"><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/student/">Submissions</a></li>
+        <li class="nav-item active"><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/history/">History</a></li>
+
+        
+        <li class="nav-item active"><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass1/index.html">Assignment 1</a></li>
+        
+
+        
+        <li class="nav-item active"><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html">Assignment 2</a></li>
+        
+
+        
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<main class="container" aria-label="Content" style="flex: 1; padding-top: 4rem;">
+
+
+<header>
+
+<h1 class="text-center" id="assignment-2-cspotify">
+Assignment 2 - CSpotify
+</h1>
+
+</header>
+
+
+<style>
+h1::before,h2::before {
+  content: '';
+  display: block;
+  height:      50px;
+  margin-top: -50px;
+  visibility: hidden;
+}
+
+#toc {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 70px;
+}
+</style>
+<div class="row">
+
+
+<div class="col-lg-10 col-12">
+
+
+<p class="text-right text-muted"><small>
+version: 1.4.1 
+last updated: 2020-11-17 18:00:00
+</small></p>
+
+
+
+
+
+
+
+
+<style>
+    h1, h2, h3, h4, h5 {
+        margin-top: 0.8em;
+        margin-bottom: 0.8em;
+    }
+    </style>
+    
+    
+    
+    
+    <!-- <div class="alert alert-danger" id="errata_1">
+      <p>
+        <h2>THIS IS A DRAFT OF THE ASSIGNMENT.</h2>
+        <strong>Please Note: </strong>Starter code and autotests for the assignment will be 
+        released 24 hours after the assignment release.
+    </div> -->
+
+    <h1 id="introduction">Introduction</h1>
+    <p>
+    We consider music streaming to be a normal thing that we use regularly . . . but it wasn't always this way.
+    In the late 1990s, a new file format called the MP3 appeared. Its ability to compress audio coupled with
+    the rise of the internet lead to a new era in the music industry. Napster (and a new generation of music
+    pirates) brought this into the spotlight when they launched in 1999.</p>
+    <p>
+    Nowadays, with services like Spotify, we have access to a massive library of music (and other audio) content
+    from nearly any device with an internet connection.
+    </p><p>
+    In this assignment, you'll be looking at some of the coding work that goes into organisation of music with
+    things like song information, playlists and personal music libraries. CSpotify is our implementation of a
+    song library using linked lists as the primary data structure.
+    
+    </p><h2 id="goal">Your Goal</h2>
+    <p>
+      The assignment is divided into two parts:
+      </p><ul>
+        <li> 
+          <i>Part A</i> - Implementation (5 Stages) <br>
+          Your task here is to write the functions that will manage your music <code>Library</code>
+          of <code>Playlists</code> which contain <code>Tracks</code>. All of these functions are contained inside 
+          the file <code>cspotify.c</code>. 
+          
+          <div class="alert alert-warning">
+            <strong>Note: </strong> 
+            You should refer to <code>cspotify.h</code> for more technical and 
+            detailed instructions in regards to each function’s implementation.
+          </div>
+          
+        </li> 
+        <li> 
+          <i>Part B</i> - Testing <br>
+          Your task here is to write functions in <code>test_cspotify.c</code> to check that your code works.
+        </li>
+      </ul>
+
+    <p>
+    Please note that you do not need to scan in any inputs from the user, this 
+    is already completed for you in the given starter code.
+    </p>
+    
+    <h2 id="library">The Overall Picture - Your Library</h2>
+    <p>
+      The <code>Library</code> is the overall struct which contains all the objects you will need 
+      for the assignment. The <code>Library</code> contains a list of <code>Playlists</code>. In each of
+      the <code>Playlists</code>, there is a list of <code>Tracks</code>. At the start of the program, 
+      the <code>Library</code> starts off as an empty <code>Library</code> containing no <code>Playlists</code> and 
+      hence no <code>Tracks</code>.</p>
+      
+    <p>
+      <img style="max-width: 100%" src="./COMP1511 20T3 - Assignment 2 - CSpotify_files/EmptyLibrary.png" alt="The Library with no playlists">
+    </p>
+    <p>  
+      As you progress through Stage 1 of the assignment to manage <code>Playlists</code> to 
+      your <code>Library</code>, your <code>Library</code> might start to look like this, where there are 
+      <code>Playlists</code> in the <code>Library</code> but not <code>Tracks</code> in any of the <code>Playlists</code>:</p>
+    <p>  
+      <img style="max-width: 100%" src="./COMP1511 20T3 - Assignment 2 - CSpotify_files/LibraryWithPlaylists.png" alt="The Library with some playlists">
+    </p>      
+    <p>  
+      Stage 2 will then allow you to navigate around your <code>Library</code> <code>Playlists</code> 
+      and add <code>Tracks</code> to each <code>Library</code>, resulting in a <code>Library</code> that could look 
+      like this:</p>
+    <p>  
+      <img style="max-width: 100%" src="./COMP1511 20T3 - Assignment 2 - CSpotify_files/LibraryPlaylistsTracks.png" alt="Library, Playlists and Tracks">
+    </p>
+    <p>  
+      Each <code>Track</code> will store information about the title, artist and the 
+      trackLength in addition to a next pointer.</p>
+    <p>  
+      <img style="max-width: 100%" src="./COMP1511 20T3 - Assignment 2 - CSpotify_files/TrackDetails.png" alt="Details about the Track Struct">
+    </p>
+    <p>  
+      Stage 3 will focus on removing certain objects from your <code>Library</code>.</p>
+    <p>  
+      Stage 4 and 5 will be more challenging manipulations of your <code>Library</code>. <br>
+    </p><p>  
+      The assignment breaks up the above further into smaller tasks to help you 
+      build and navigate around your <code>Library</code>. It is strongly recommended that 
+      you begin from Stage 1 and progress in the given order.
+    </p>
+    
+    
+    <h1 id="getting-started">Getting Started</h1>
+    
+    <p>
+    <!-- <code class="lang-clike">cspotify.c</code>. -->
+    
+    </p><h2 id="starter-code">Starter Code</h2>
+    
+    <div class="alert alert-secondary">
+    <a href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/activities/cspotify/cspotify.zip">
+    <strong>Download the starter code (cspotify.zip) here</strong>
+    </a>
+    or copy it to your CSE account using the following command:
+<pre is="tty"><kbd is="sh">1511 setup_cspotify</kbd>
+</pre>
+    </div>
+    <br>
+
+    <!-- <div class="alert alert-secondary">
+      Copy the starter code to your CSE account using the following command:
+<pre is="tty">
+<kbd is="sh">1511 setup_cspotify</kbd>
+</pre>
+      </div>
+    <br/> -->
+    
+    <p>
+    The starter code consists of the following files:
+    </p><p>
+    <a href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/activities/cspotify/main.c"><code class="lang-clike">main.c</code></a> 
+    <!-- <code class="lang-clike">main.c</code> -->
+    contains the main function for the assignment.
+    It will scan the program's input, then call the functions you will write.<br>
+    <strong>You must not change this file.</strong>
+    
+    </p><p>
+    <a href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/activities/cspotify/cspotify.h"><code class="lang-clike">cspotify.h</code></a> 
+    <!-- <code class="lang-clike">cspotify.h</code> -->
+    contains the definitions of all the functions you will be writing. It also contains useful constants 
+    and type definitions.<br>
+    <strong>You must not change this file.</strong>
+    
+    </p><p>
+    <a href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/activities/cspotify/cspotify.c"><code class="lang-clike">cspotify.c</code></a>
+    <!-- <code class="lang-clike">cspotify.c</code> -->
+    contains empty functions which you will need to implement. 
+    It already contains some functions. It is <i>strongly
+    recommended</i> that you use these.<br>
+    <strong>This file is where you will write your own code.</strong>
+    
+    </p><p>
+      <a href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/activities/cspotify/test_main.c"><code class="lang-clike">test_main.c</code></a>
+      <!-- <code class="lang-clike">test_main.c</code> -->
+      contains a main function and other functions that allow you to run the 
+      tests you create in <code>test_cspotify.c</code>.<br>
+      <strong>You must not change this file.</strong>
+
+    </p><p>
+        <a href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/activities/cspotify/test_cspotify.h"><code class="lang-clike">test_cspotify.h</code></a>
+        <!-- <code class="lang-clike">test_cspotify.h</code> -->
+        contains the prototypes of the testing functions in <code>test_cspotify.c</code>.<br>
+        <strong>You must not change this file.</strong>
+    </p><p>
+    <a href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/activities/cspotify/test_cspotify.c"><code class="lang-clike">test_cspotify.c</code></a> 
+    <!-- <code class="lang-clike">test_cspotify.c</code> -->
+    contains an alternative main function as well as template code that you will modify to make your own tests.<br>
+    <strong>This file is where you will write your own test cases.</strong>
+    </p><p>
+        <a href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/activities/cspotify/capture.h"><code class="lang-clike">capture.h</code></a> 
+        <!-- <code class="lang-clike">capture.h</code> -->
+        contains the definition of a function that allows you to capture the output of your own code, to use in testing. 
+        It can only be used in <code>test_cspotify.c</code>, and will not be available in <code>cspotify.c
+        </code>. <br>
+        <strong>You must not change this file.</strong>
+      </p><p>
+        <a href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/activities/cspotify/capture.c"><code class="lang-clike">capture.c</code></a> 
+        <!-- <code class="lang-clike">capture.c</code> -->
+        contains 
+        the implementation of functions that allow you to capture the output of your own code, to use in 
+        testing. <br>
+        <strong>You must not change this file.</strong>
+    </p><p>
+    
+    <br>
+    To run your code interactively, you should use the command:
+</p><pre is="tty"><kbd is="sh">dcc -o cspotify cspotify.c main.c</kbd>
+<kbd is="sh">./cspotify</kbd>
+</pre>
+    <p>
+    To run your tests (written in <code class="lang-clike">test_cspotify.c</code>), you should use the command:
+</p><pre is="tty"><kbd is="sh">dcc -o test_cspotify cspotify.c test_cspotify.c capture.c test_main.c</kbd>
+<kbd is="sh">./test_cspotify</kbd>
+</pre>
+    
+    <h2 id="allowed-c-features">Allowed C Features</h2>
+    
+    <p>
+    In this assignment, there are two restrictions on C Features:
+    </p>
+    <ul>
+      <li>
+      You must follow the rules explained in
+      <a href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/resources/style_guide.html">the Style Guide</a>.
+    </li>
+    <li>
+    You may not use the function <code>fnmatch</code>, or import <code>fnmatch.h</code>.
+    </li>
+    </ul>
+    <p>
+    It is recommended to only use features that have been taught in COMP1511.
+    Course work in Week 8 will have a particular focus on assistance for this assignment and
+    you will not need any of the subject material from Weeks 9 or 10.
+    
+    </p><p>
+    If you choose to disregard this advice, you <b>must</b> still follow the Style Guide. You also may
+    be unable to get help from course staff if you use features not taught in COMP1511.
+    </p>
+    
+    <h2 id="reference-implementation">Reference Implementation</h2>
+    
+    <p>
+    If you have questions about what behaviour your program should exhibit,
+    we have provided a sample solution for you to use.
+    </p><p>
+    
+</p><pre is="tty"><kbd is="sh">1511 cspotify</kbd>
+</pre>
+    
+    <h1 id="stage_one">Stage One</h1>
+    <p>
+    When you execute your program, you can assume that the <code>Library</code> has already 
+    been created for you to perform the following operations.
+
+    Stage 1 involves managing the <code>Playlists</code> in your <code>Library</code> as well as 
+    printing out the state of the <code>Library</code>. You will need to implement or 
+    modify the following functions:
+    </p><ul>
+      <li><code class="lang-clike">create_library</code> 
+        (This is already implemented for you, you may need to modify it)
+      </li> 
+      <li><code class="lang-clike">add_playlist</code></li> 
+      <li><code class="lang-clike">print_library</code></li> 
+      <li><code class="lang-clike">rename_playlist</code></li> 
+    </ul>
+    
+    <h2 id="add_playlist">Add a playlist</h2>
+
+    <div class="alert alert-dark">
+    <strong>Command: </strong><code class="lang-clike">A &lt;playlistName&gt;</code><br>
+    <strong>Example: </strong><code class="lang-clike">A RoadTrip</code><br>
+    <strong>Description: </strong> Adds a new <code>Playlist</code> named "Roadtrip" at the 
+    end of the <code>Library</code> of <code>Playlists</code>. <br>
+    </div>
+    
+    <p>
+    In <code class="lang-clike">cspotify.c</code> you have been given the function 
+    stub (a stub is an unimplemented function):
+    
+</p><div class="highlight"><pre><span></span><span class="c1">// Add a new Playlist to the Library.</span>
+<span class="kt">int</span> <span class="nf">add_playlist</span><span class="p">(</span><span class="n">Library</span> <span class="n">library</span><span class="p">,</span> <span class="kt">char</span> <span class="n">playlistName</span><span class="p">[</span><span class="n">MAX_LEN</span><span class="p">])</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">SUCCESS</span><span class="p">;</span>
+<span class="p">}</span>  
+</pre></div>
+
+    
+    <p>
+    This function will be given a <code>Library</code> and a <code>Playlist</code> name. You will need 
+    to insert a new <code>Playlist</code> node at the end of the linked list of <code>Playlists</code> in 
+    the <code>Library</code>. If the <code>Library</code> has no <code>Playlists</code>, your new <code>Playlist</code> will become
+    the first <code>Playlist</code> in the <code>Library</code>. If this is the case, you will need to 
+    make this <code>Playlist</code> “selected”. 
+    </p>
+    <p>
+    You can assume you will never receive a <code>Playlist</code> name which already exists in the <code>Library</code>
+    </p>
+    <p> 
+    You may receive invalid inputs so the function will return either:
+    </p>
+    <ul>
+      <li><code class="lang-clike">ERROR_INVALID_INPUTS</code>
+        if the given <code>Playlist</code> name is invalid (i.e. not alphanumeric).
+      </li>   
+      <li><code class="lang-clike">SUCCESS</code>
+        if a new <code>Playlist</code> is successfully added.
+      </li> 
+    </ul>
+    
+    You will need to create a <code>Playlist</code> node (using <code>malloc</code>) before it is inserted into the <code>Library</code>.
+    <p> 
+    
+    Please note that until you implement the next function in this stage for 
+    printing out the <code>Library</code>, you will not be able to see whether your 
+    <code>Playlist</code> has been added successfully into the <code>Library</code>. 
+    </p><div class="alert alert-warning">
+      The message which appears right after running any command simply 
+      acknowledges the function has been called and/or depends on your return values.
+      It does not necessarily indicate the success of 
+      your implementation of this function. 
+    </div>
+    
+    
+    <p></p>
+    
+    <h2 id="print_library">Print Out the Library</h2>
+    <div class="alert alert-dark">
+      <strong>Command: </strong><code class="lang-clike">P</code><br>
+      <strong>Example: </strong><code class="lang-clike">P</code><br>
+      <strong>Description: </strong> Prints out the <code>Library</code>. <br>
+    </div>
+    
+    <p>
+    In <code class="lang-clike">cspotify.c</code> you have been given the function 
+    stub (a stub is an unimplemented function):
+    
+</p><div class="highlight"><pre><span></span><span class="c1">// Print out the Library.</span>
+<span class="kt">void</span> <span class="nf">print_library</span><span class="p">(</span><span class="n">Library</span> <span class="n">library</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+
+    You will need to use the following helper functions already provided to you 
+    in the same file:
+    <code>print_playlist</code>, <code>print_selected_playlist</code> and 
+    <code>print_track</code>.
+    <p></p>
+    <p>
+    This function will be given a <code>Library</code>. The function should go through each
+    <code>Playlist</code> in the <code>Library</code> and print out the information in the order they 
+    are in inside the <code>Library</code>. You should use the above helper functions to 
+    print the <code>Library</code> out, instead of calling <code>printf</code> yourself. 
+    Note that the word <code class="lang-clike">static</code> on these 
+    functions will make that function only accessible in the current file.
+    We often use <code class="lang-clike">static</code> on helper functions 
+    that are not part of the header file and aren't used by any other parts of the program. 
+    <code class="lang-clike">static</code> will not significantly change how 
+    you will use or define this function.
+
+    </p><p>
+    You may see that both <code class="lang-clike">print_playlist</code> and 
+    <code class="lang-clike">print_selected_playlist</code> above take in an 
+    <code class="lang-clike">int number</code>, this is the position in which 
+    they are in in the <code>Library</code> of <code>Playlists</code> assuming that the first <code>Playlist</code> 
+    is at position 0. 
+
+    </p><p>
+    The function should not return anything. 
+
+    </p><p>
+    At this stage, you will only need to use 
+    <code class="lang-clike">print_playlist</code> and 
+    <code class="lang-clike">print_selected_playlist</code> to help you print 
+    out information in the <code>Library</code>. <code class="lang-clike">print_track</code>
+    is not needed until Stage 2 has been implemented. 
+
+    After implementing stage 2, you should come back and make sure that the 
+    <code>Tracks</code> in each <code>Playlist</code> are also printed out. 
+    </p>
+
+
+    <h2 id="rename_playlist">Rename a Playlist</h2>
+    <div class="alert alert-dark">
+      <strong>Command: </strong><code class="lang-clike">R &lt;playlistName&gt; 
+        &lt;newPlaylistName&gt;</code><br>
+      <strong>Example: </strong><code class="lang-clike">R Roadtrip SleepMusic</code><br>
+      <strong>Description: </strong>Renames the existing <code>Playlist</code> "Roadtrip" 
+        to "SleepMusic". <br>
+    </div>
+    
+    <p>
+    In <code class="lang-clike">cspotify.c</code> you have been given the function 
+    stub (a stub is an unimplemented function):
+    
+    
+</p><div class="highlight"><pre><span></span><span class="c1">// Rename the name of an existing Playlist.</span>
+<span class="kt">int</span> <span class="nf">rename_playlist</span><span class="p">(</span><span class="n">Library</span> <span class="n">library</span><span class="p">,</span> <span class="kt">char</span> <span class="n">playlistName</span><span class="p">[</span><span class="n">MAX_LEN</span><span class="p">],</span>
+    <span class="kt">char</span> <span class="n">newPlaylistName</span><span class="p">[</span><span class="n">MAX_LEN</span><span class="p">])</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">SUCCESS</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+    
+    <p>
+    This function will be given a <code>Library</code>, a <code>Playlist</code> name and a new <code>Playlist</code> 
+    name. Your task is to find the <code>playlistName</code> in the <code>Library</code> of <code>Playlists</code> 
+    and change its name to the name given in <code>newPlaylistName</code>.
+
+    </p><p>
+    You may receive invalid inputs so the function will return either:
+    </p><ul>
+      <li><code class="lang-clike">ERROR_NOT_FOUND</code> 
+        if the given <code>Playlist</code> name is not found otherwise,
+      </li> 
+      
+      <li><code class="lang-clike">ERROR_INVALID_INPUTS</code>
+        if the new <code>Playlist</code> name is invalid (i.e. not alphanumeric).
+      </li> 
+      
+      <li><code class="lang-clike">SUCCESS</code>
+        if a new <code>Playlist</code> is successfully added.
+      </li>    
+    </ul>
+
+    <p></p>
+    
+    <div class="alert alert-secondary">
+      <strong>Run the tests for this stage with: </strong>
+<pre is="tty"><kbd is="sh">1511 autotest-stage 01 ass2_cspotify</kbd>
+</pre>
+      <strong>Check the style of your code with:</strong>
+<pre is="tty"><kbd is="sh">1511 style cspotify.c</kbd>
+</pre>
+    <small>Please note, the files you test <strong>must</strong> be named correctly, or this test will not work properly.</small>
+    
+    <p>
+    <strong>To pass all the tests for this stage, you will need to add tests in <code>test_cspotify.c</code></strong>
+    See <a href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#test_cspotify">Writing your own automated tests</a> for more info.
+    
+    </p></div>
+    
+    
+    <h1 id="stage_two">Stage Two</h1>
+    
+    <p>  
+    Stage 2 involves navigating around a <code>Library</code> of <code>Playlists</code> and adding 
+    <code>Tracks</code>. You will need to implement the following functions:
+    </p><ul>
+      <li><code class="lang-clike">select_next_playlist</code></li> 
+      <li><code class="lang-clike">select_previous_playlist</code></li> 
+      <li><code class="lang-clike">add_track</code></li> 
+      <li><code class="lang-clike">playlist_length</code></li> 
+    </ul>
+    
+    <h2 id="select_next">Select the Next Playlist</h2>
+    <div class="alert alert-dark">
+      <strong>Command: </strong><code class="lang-clike">S</code><br>
+      <strong>Example: </strong><code class="lang-clike">S</code><br>
+      <strong>Description: </strong> Selects the next <code>Playlist</code> in the <code>Library</code>. <br>
+    </div>
+    
+    <p>
+    In <code class="lang-clike">cspotify.c</code> you have been given the function 
+    stub (a stub is an unimplemented function):
+
+    
+</p><div class="highlight"><pre><span></span><span class="c1">// Selects the next Playlist in the Library.</span>
+<span class="kt">void</span> <span class="nf">select_next_playlist</span><span class="p">(</span><span class="n">Library</span> <span class="n">library</span><span class="p">)</span> <span class="p">{</span>
+  
+<span class="p">}</span>
+</pre></div>
+
+
+    <p>
+    This function will be given a <code>Library</code>. In Stage 1, by default the first 
+    <code>Playlist</code> added into the <code>Library</code> was selected. For this function, you will 
+    need to change the selected <code>Playlist</code> in the <code>Library</code> to the <code>Playlist</code> after 
+    the currently selected <code>Playlist</code>. 
+
+    </p><p>
+    If the currently selected <code>Playlist</code> is the last <code>Playlist</code> in the <code>Library</code>, 
+    make the first <code>Playlist</code> in the <code>Library</code> become the new selected <code>Playlist</code>.
+
+    </p><p>
+    The function should not return anything.
+    </p>
+
+
+    <h2 id="select_prev">Select the Previous Playlist</h2>
+    <div class="alert alert-dark">
+      <strong>Command: </strong><code class="lang-clike">W</code><br>
+      <strong>Example: </strong><code class="lang-clike">W</code><br>
+      <strong>Description: </strong> Selects the previous <code>Playlist</code> in the <code>Library</code>. <br>
+    </div> 
+    
+    <p>
+    In <code class="lang-clike">cspotify.c</code> you have been given the function 
+    stub (a stub is an unimplemented function):
+
+    
+</p><div class="highlight"><pre><span></span><span class="c1">// Selects the previous Playlist in the Library.</span>
+<span class="kt">void</span> <span class="nf">select_previous_playlist</span><span class="p">(</span><span class="n">Library</span> <span class="n">library</span><span class="p">)</span> <span class="p">{</span>
+  
+<span class="p">}</span>
+</pre></div>
+
+    <p>
+    This function is very similar to selecting the next <code>Playlist</code>. Given a 
+    <code>Library</code>, you will need to change the <code>Playlist</code> that is selected to the 
+    <code>Playlist</code> before the currently selected <code>Playlist</code>. 
+    
+    </p><p>
+    If the currently selected <code>Playlist</code> is the first <code>Playlist</code> in the <code>Library</code>, 
+    make the last <code>Playlist</code> in the <code>Library</code> become the new selected <code>Playlist</code>.
+
+    </p><p>
+    The function should not return anything.
+    </p>
+
+
+    <h2 id="add_track">Add a Track</h2>
+    <div class="alert alert-dark">
+      <strong>Command: </strong><code class="lang-clike">a &lt;title&gt; 
+        &lt;artist&gt; &lt;trackLengthInSec&gt; &lt;position&gt;</code><br>
+      <strong>Example: </strong><code class="lang-clike">a PrettySavage 
+        BLACKPINK 350 0</code><br>
+      <strong>Description: </strong> 
+        Adds a new <code>Track</code> at the 0th position in the selected <code>Playlist</code>. 
+        Specifically, this is a <code>Track</code> titled "PrettySavage" by the artist 
+        "BLACKPINK" and has a <code>Track</code> length of 350 seconds.
+      <br>
+    </div>
+    
+    <p>
+    In <code class="lang-clike">cspotify.c</code> you have been given the function 
+    stub (a stub is an unimplemented function):
+
+    
+</p><div class="highlight"><pre><span></span><span class="c1">// Add a new Track to the selected Playlist.</span>
+<span class="kt">int</span> <span class="nf">add_track</span><span class="p">(</span><span class="n">Library</span> <span class="n">library</span><span class="p">,</span> <span class="kt">char</span> <span class="n">title</span><span class="p">[</span><span class="n">MAX_LEN</span><span class="p">],</span> <span class="kt">char</span> <span class="n">artist</span><span class="p">[</span><span class="n">MAX_LEN</span><span class="p">],</span> 
+    <span class="kt">int</span> <span class="n">trackLengthInSec</span><span class="p">,</span> <span class="kt">int</span> <span class="n">position</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">SUCCESS</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+    
+    <p>
+    This function will be given a <code>Library</code>, <code>Track</code> title, the artist of the <code>Track</code>, 
+    the <code>Track</code> length in seconds as well as a position number. 
+
+    </p><p>
+    Your task is to go through the selected <code>Playlist</code> and add a new <code>Track</code> node 
+    at the position specified by <code class="lang-clike">position</code>. 
+    If <code class="lang-clike">position</code> is 0, the node 
+    should be inserted at the front of the <code>Playlist</code>. If the 
+    <code class="lang-clike">position</code> has a 
+    value equal to the number of <code>Tracks</code> in the <code>Playlist</code>, the node should be 
+    inserted at the end of the <code>Playlist</code>.
+
+    </p><p>
+    It is possible that the same <code>Track</code> can be added to the same <code>Playlist</code> multiple times.
+    
+    You may receive invalid inputs so the function will return one of the following:
+    </p><ul>
+      <li><code class="lang-clike">ERROR_NOT_FOUND</code>
+        if there are no <code>Playlists</code> in the <code>Library</code>, otherwise,
+      </li>
+      <li><code class="lang-clike">ERROR_INVALID_INPUTS</code>
+        if the given title/artist/position/track length is invalid. 
+        (see <code class="lang-clike">cspotify.h</code> for more details)
+      </li>   
+      <li><code class="lang-clike">SUCCESS</code>
+        if a new <code>Playlist</code> is successfully added.
+      </li> 
+    </ul>
+
+    <p>
+    You will also need to make changes to your 
+    <code class="lang-clike">print_library</code> function in 
+    Stage 1 so that it will now also print out the <code>Tracks</code> you add to a <code>Playlist</code>.
+    </p>
+
+    <!------------------------------------------------------------------------>
+    <h2 id="playlist_length">Calculate the Length of the Playlist</h2>
+    <div class="alert alert-dark">
+      <strong>Command: </strong><code class="lang-clike">T</code><br>
+      <strong>Example: </strong><code class="lang-clike">T</code><br>
+      <strong>Description: </strong> 
+      Calculates the total length of the selected <code>Playlist</code> in minutes and seconds.
+      <br>
+    </div>
+    
+    <p>
+    In <code class="lang-clike">cspotify.c</code> you have been given the function 
+    stub (a stub is an unimplemented function):
+
+    
+</p><div class="highlight"><pre><span></span><span class="c1">// Calculate the total length of the selected Playlist in minutes and seconds.</span>
+<span class="kt">void</span> <span class="nf">playlist_length</span><span class="p">(</span><span class="n">Library</span> <span class="n">library</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">playlistMinutes</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">playlistSeconds</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+
+    
+    <p>
+    For this function, you are given a <code>Library</code> and two uninitialised 
+    int variables passed into the function by reference 
+    (i.e. the two <code class="lang-clike">int</code> pointers you receive in 
+    this function are pointing to the memory location of two 
+    <code class="lang-clike">int</code> variables). 
+
+    </p><p>
+    Your task is to go through and calculate the length of the currently 
+    selected <code>Playlist</code> in your <code>Library</code>. 
+    The total number of minutes in the <code>Playlist</code> should be stored inside 
+    the memory pointed to by the <code class="lang-clike">playlistMinutes</code> 
+    pointer. The total number of seconds in the <code>Playlist</code> should be stored 
+    in the memory pointed to by the 
+    <code class="lang-clike">playlistSeconds</code> pointer.
+
+    </p><p>
+    The function should not return anything.
+
+    
+    </p><div class="alert alert-secondary">
+      <strong>Run the tests for this stage with: </strong>
+<pre is="tty"><kbd is="sh">1511 autotest-stage 02 ass2_cspotify</kbd>
+</pre>
+      <strong>Check the style of your code with:</strong>
+<pre is="tty"><kbd is="sh">1511 style cspotify.c</kbd>
+</pre>
+    <small>Please note, the files you test <strong>must</strong> be named correctly, or this test will not work properly.</small>
+    
+    <p>
+    <strong>To pass all the tests for this stage, you will need to add tests in <code>test_cspotify.c</code></strong>
+    See <a href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#test_cspotify">Writing your own automated tests</a> for more info.
+    
+    </p></div>
+    
+    <!------------------------------------------------------------------------>
+    <h1 id="stage_three">Stage Three</h1>
+    <p>  
+      Stage 3 involves removing objects from your <code>Library</code> and the <code>Library</code> 
+      itself. You will be freeing memory which has been malloced. 
+      You will need to implement the following functions:
+    </p><ul>
+      <li><code class="lang-clike">delete_track</code></li> 
+      <li><code class="lang-clike">delete_playlist</code></li> 
+      <li><code class="lang-clike">delete_library</code></li> 
+    </ul>
+    
+
+    <!------------------------------------------------------------------------>
+    <h2 id="delete_track">Delete a Given Track</h2>
+    <div class="alert alert-dark">
+      <strong>Command: </strong><code class="lang-clike">d &lt;track&gt;</code><br>
+      <strong>Example: </strong><code class="lang-clike">d LovesickGirls</code><br>
+      <strong>Description: </strong> 
+      Deletes the first instance of the <code>Track</code> titled "LovesickGirls" 
+      in the selected <code>Playlist</code> of the <code>Library</code>.
+      <br>
+    </div>
+    
+    <p>
+    In <code class="lang-clike">cspotify.c</code> you have been given the function 
+    stub (a stub is an unimplemented function):
+
+    
+</p><div class="highlight"><pre><span></span><span class="c1">// Delete the first instance of the given track in the selected Playlist</span>
+<span class="c1">// of the Library.</span>
+<span class="kt">void</span> <span class="nf">delete_track</span><span class="p">(</span><span class="n">Library</span> <span class="n">library</span><span class="p">,</span> <span class="kt">char</span> <span class="n">track</span><span class="p">[</span><span class="n">MAX_LEN</span><span class="p">])</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+
+    
+    <p>
+    Calling this function should delete the first instance which matches the 
+    given <code>Track</code> name within the selected <code>Playlist</code>.
+
+    </p><p>
+    The function should not return anything.
+
+    <!------------------------------------------------------------------------>
+    </p><h2 id="delete_selected">Delete the Selected Playlist</h2>
+    <div class="alert alert-dark">
+      <strong>Command: </strong><code class="lang-clike">D</code><br>
+      <strong>Example: </strong><code class="lang-clike">D</code><br>
+      <strong>Description: </strong> 
+      Deletes the selected <code>Playlist</code> and select the next <code>Playlist</code> in the <code>Library</code>.
+      <br>
+    </div> 
+    
+    <p>
+    In <code class="lang-clike">cspotify.c</code> you have been given the function 
+    stub (a stub is an unimplemented function):
+
+    
+</p><div class="highlight"><pre><span></span><span class="c1">// Delete the selected Playlist and select the next Playlist in the Library.</span>
+<span class="kt">void</span> <span class="nf">delete_playlist</span><span class="p">(</span><span class="n">Library</span> <span class="n">library</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+
+    
+    <p>
+    Calling this function should delete the entire selected <code>Playlist</code> as well 
+    as all the <code>Tracks</code> within this <code>Playlist</code>. You should ensure that the next 
+    <code>Playlist</code> in the <code>Library</code> is selected once the currently selected <code>Playlist</code> 
+    is removed. If there is no next <code>Playlist</code>, select the first <code>Playlist</code> in the 
+    <code>Library</code>.
+
+    </p><p>
+    The function should not return anything.
+
+    <!------------------------------------------------------------------------>
+
+    </p><h2 id="delete_library">Delete the Entire Library</h2>
+    <div class="alert alert-dark">
+      <strong>Command: </strong><code class="lang-clike">X</code><br>
+      <strong>Example: </strong><code class="lang-clike">X</code><br>
+      <strong>Description: </strong> 
+      Deletes an entire <code>Library</code> and its associated <code>Playlists</code> and <code>Tracks</code>.
+      <br>
+    </div>
+    
+    <p>
+    In <code class="lang-clike">cspotify.c</code> you have been given the function 
+    stub (a stub is an unimplemented function):
+
+    
+</p><div class="highlight"><pre><span></span><span class="c1">// Delete an entire Library and its associated Playlists and Tracks.</span>
+<span class="kt">void</span> <span class="nf">delete_library</span><span class="p">(</span><span class="n">Library</span> <span class="n">library</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+
+    
+    <p>
+    Calling this function should delete the entire given <code>Library</code> including its 
+    <code>Playlists</code> and <code>Tracks</code> within each <code>Playlist</code>.
+
+    </p><p>
+    The function should not return anything.
+    
+    </p><div class="alert alert-secondary">
+      <strong>Run the tests for this stage with: </strong>
+<pre is="tty"><kbd is="sh">1511 autotest-stage 03 ass2_cspotify</kbd>
+</pre>
+      <strong>Check the style of your code with:</strong>
+<pre is="tty"><kbd is="sh">1511 style cspotify.c</kbd>
+</pre>
+    <small>Please note, the files you test <strong>must</strong> be named correctly, or this test will not work properly.</small>
+    
+    <p>
+    <strong>To pass all the tests for this stage, you will need to add tests in <code>test_cspotify.c</code></strong>
+    See <a href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#test_cspotify">Writing your own automated tests</a> for more info.
+    
+    </p></div>
+    
+    <!------------------------------------------------------------------------>
+    <h1 id="stage_four">Stage Four</h1>
+    <div class="alert alert-danger">
+      <strong>This stage has very few tests in the autotest!</strong>
+      They do not necessarily cover every edge case.
+      You should test it with other inputs, and compare your solution against the reference solution.
+      </div>
+    <p>  
+      Stage 4 consists of more involved manipulations of the <code>Library</code>. 
+      You will need to implement the following functions:
+    </p><ul>
+      <li><code class="lang-clike">cut_and_paste_track</code></li> 
+      <li><code class="lang-clike">soundex_search</code></li> 
+    </ul>
+
+    <!------------------------------------------------------------------------>
+
+    <h2 id="cut_paste">Cut and Paste Track</h2>
+    <div class="alert alert-dark">
+      <strong>Command: </strong><code class="lang-clike">c &lt;trackName&gt; &lt;destPlaylist&gt;</code><br>
+      <strong>Example: </strong><code class="lang-clike">c WakaWaka Fun</code><br>
+      <strong>Description: </strong> 
+      Moves the <code>Track</code> title "WakaWaka" from the currently selected <code>Playlist</code> to 
+      an existing destination <code>Playlist</code> named "Fun".
+      <br>
+    </div>
+    
+    <p>
+    In <code class="lang-clike">cspotify.c</code> you have been given the function 
+    stub (a stub is an unimplemented function):
+
+    
+</p><div class="highlight"><pre><span></span><span class="c1">// Cut the given track in selected Playlist and paste it into the given </span>
+<span class="c1">// destination Playlist.</span>
+<span class="kt">int</span> <span class="nf">cut_and_paste_track</span><span class="p">(</span><span class="n">Library</span> <span class="n">library</span><span class="p">,</span> <span class="kt">char</span> <span class="n">trackTitle</span><span class="p">[</span><span class="n">MAX_LEN</span><span class="p">],</span> 
+    <span class="kt">char</span> <span class="n">destPlaylist</span><span class="p">[</span><span class="n">MAX_LEN</span><span class="p">])</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">SUCCESS</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+    
+    <p>
+    This function will take in a <code>Library</code>, a <code>Track</code> title and a destination <code>Playlist</code>.
+    It should remove the first <code>Track</code> instance which matches the given trackName from 
+    the selected <code>Playlist</code> and add it into the end of the <code>Playlist</code> with the given 
+    destination <code>Playlist</code> name.
+
+    The function should return one of the error codes 
+    (see <code class="lang-clike">cspotify.h</code> for more details) or 
+    <code class="lang-clike">SUCCESS</code>.
+    
+
+    <!------------------------------------------------------------------------>
+
+    </p><h2 id="soundex">Soundex Search</h2>
+    <div class="alert alert-dark">
+      <strong>Command: </strong><code class="lang-clike">s &lt;searchTerm&gt;</code><br>
+      <strong>Example: </strong><code class="lang-clike">s Robert</code><br>
+      <strong>Description: </strong> 
+      Prints out all <code>Tracks</code> with artists that have the same Soundex Encoding as 
+      the given search term.
+      <br>
+    </div>
+    
+    <p>
+    </p><h3>What is Soundex?</h3>
+    <p>
+    Soundex is a phonetic algorithm which allows strings to be encoded so that 
+    words which sound similar will have the same encoding despite small 
+    differences in spelling. 
+    </p><p>
+    This becomes very useful in searching for music. 
+    For example, when searching for artists,
+    mispelling the artist names will still allow you to search for the artist.
+
+    <!-- For more details, please see: 
+    <a href="https://en.wikipedia.org/wiki/Soundex">Soundex Wikipedia</a> -->
+
+    </p><p>
+    
+    In <code class="lang-clike">cspotify.c</code> you have been given the function 
+    stub (a stub is an unimplemented function):
+    
+    
+</p><div class="highlight"><pre><span></span><span class="c1">// Search the given Library for tracks where its artist</span>
+<span class="c1">// match the given searchTerm</span>
+<span class="kt">void</span> <span class="nf">soundex_search</span><span class="p">(</span><span class="n">Library</span> <span class="n">library</span><span class="p">,</span> <span class="kt">char</span> <span class="n">artist</span><span class="p">[</span><span class="n">MAX_LEN</span><span class="p">])</span> <span class="p">{</span>
+  
+<span class="p">}</span>
+</pre></div>
+
+
+    <p>
+    This function will take in a <code>Library</code> and a search term. Your task is to go
+    through the given <code>Library</code> and print out all <code>Tracks</code> with artists that have
+    the same Soundex encoding as the given search term. You will again, need to 
+    use the given help function <code class="lang-clike">print_track</code>
+    instead of calling <code class="lang-clike">printf</code> yourself to 
+    print out the matching <code>Tracks</code>.
+
+    </p><p>
+    The specific version of the Soundex algorithm which will be used is specified 
+      in <code class="lang-clike">cspotify.h</code>
+
+    </p><div class="alert alert-info">
+      <p><b>New:</b>If you're looking for a verbal explaination, this is a recording of Tom (COMP1511 course admin)
+      explaining Soundex to his class: <a href="https://www.youtube.com/watch?v=GPd_W0z2-1w">https://www.youtube.com/watch?v=GPd_W0z2-1w</a></p>
+    </div>
+
+    <p>
+    The function should not return anything.
+    
+    </p><div class="alert alert-secondary">
+      <strong>Run the tests for this stage with: </strong>
+<pre is="tty"><kbd is="sh">1511 autotest-stage 04 ass2_cspotify</kbd>
+</pre>
+      <strong>Check the style of your code with:</strong>
+<pre is="tty"><kbd is="sh">1511 style cspotify.c</kbd>
+</pre>
+    <small>Please note, the files you test <strong>must</strong> be named correctly, or this test will not work properly.</small>
+    
+    <p>
+    <strong>To pass all the tests for this stage, you will need to add tests in <code>test_cspotify.c</code></strong>
+    See <a href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#test_cspotify">Writing your own automated tests</a> for more info.
+    
+    </p></div>
+    
+    <!------------------------------------------------------------------------>
+    <h1 id="stage_five">Stage Five</h1>
+    <div class="alert alert-danger">
+      <strong>This stage has very few tests in the autotest!</strong>
+      They do not necessarily cover every edge case.
+      You should test it with other inputs, and compare your solution against the reference solution.
+      </div>
+    <p>  
+    </p><p>  
+      Stage 5 consists of more involved manipulations of the <code>Library</code>. 
+      You will need to implement the following functions:
+    </p><ul>
+      <li><code class="lang-clike">add_filtered_playlist</code></li> 
+      <li><code class="lang-clike">reorder_playlist</code></li> 
+    </ul>
+
+    <!------------------------------------------------------------------------>
+
+    <h2 id="filtered">Add Filtered Playlist</h2>
+    <div class="alert alert-dark">
+      <strong>Command: </strong><code class="lang-clike">F &lt;artist&gt;</code><br>
+      <strong>Example: </strong><code class="lang-clike">F Taylor</code><br>
+      <strong>Description: </strong> 
+      Move all <code>Tracks</code> with artists that have the same Soundex Encoding as "Taylor"
+      to a new <code>Playlist</code>.
+      <br>
+    </div>
+    
+    <p>
+    In <code class="lang-clike">cspotify.c</code> you have been given the function 
+    stub (a stub is an unimplemented function):
+
+    
+</p><div class="highlight"><pre><span></span><span class="c1">// Move all Tracks with artists that have the same Soundex Encoding as </span>
+<span class="c1">// the given artist to a new Playlist.</span>
+<span class="kt">int</span> <span class="nf">add_filtered_playlist</span><span class="p">(</span><span class="n">Library</span> <span class="n">library</span><span class="p">,</span> <span class="kt">char</span> <span class="n">artist</span><span class="p">[</span><span class="n">MAX_LEN</span><span class="p">])</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">SUCCESS</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+    
+    <p>
+    This function will take in a <code>Library</code> and an artist. It should go through
+    the entire <code>Library</code> and move all <code>Tracks</code> with artists that have the same
+    Soundex Encoding as the given artist into a new <code>Playlist</code> named with the 
+    given artist.
+
+    The function should return one of the error codes 
+    (see <code class="lang-clike">cspotify.h</code> for more details) or 
+    <code class="lang-clike">SUCCESS</code>.
+    
+    <!------------------------------------------------------------------------>
+
+    </p><h2 id="reorder">Reorder Playlist</h2>
+    <div class="alert alert-dark">
+      <strong>Command: </strong><code class="lang-clike">r &lt;length&gt;</code><br>
+      <strong>Example: </strong><code class="lang-clike">r 5</code><br>
+      <strong>Description: </strong> 
+      Reorders the selected <code>Playlist</code> of 5 <code>Tracks</code> 
+      in an order which will be specified in the input following this command.
+      <br>
+    </div> 
+    
+    <p>
+    In <code class="lang-clike">cspotify.c</code> you have been given the function 
+    stub (a stub is an unimplemented function):
+
+    
+</p><div class="highlight"><pre><span></span><span class="c1">// Reorder the selected Playlist in the given order specified by the order array.</span>
+<span class="kt">void</span> <span class="nf">reorder_playlist</span><span class="p">(</span><span class="n">Library</span> <span class="n">library</span><span class="p">,</span> <span class="kt">int</span> <span class="n">order</span><span class="p">[</span><span class="n">MAX_LEN</span><span class="p">],</span> <span class="kt">int</span> <span class="n">length</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+
+
+    <p>
+    This function differs slightly in the way in which the command is executed.
+    Once the above command is executed, the program will prompt you 
+    to enter a series of integers. 
+
+    </p><p>
+    This function will take in a <code>Library</code>, an order array and length. 
+    It should reorder the <code>Tracks</code> in the selected <code>Playlist</code> based on the order 
+    in the given array.
+
+    More details about this function has been given in 
+    <code class="lang-clike">cspotify.h</code>.
+
+    <!------------------------------------------------------------------------>
+    
+    
+    </p><div class="alert alert-secondary">
+      <strong>Run the tests for this stage with: </strong>
+<pre is="tty"><kbd is="sh">1511 autotest-stage 05 ass2_cspotify</kbd>
+</pre>
+      <strong>Check the style of your code with:</strong>
+<pre is="tty"><kbd is="sh">1511 style cspotify.c</kbd>
+</pre>
+    <small>Please note, the files you test <strong>must</strong> be named correctly, or this test will not work properly.</small>
+    
+    </div>
+    
+    <h1 id="testing">Testing</h1>
+    It is important to test your program thoroughly to make sure it can manage 
+    different situations.
+    
+    <h2 id="test_cspotify">Writing your own Automated Tests</h2>
+    <p>
+    As you implement functions in <code>cspotify.c</code>, you will encounter autotests in
+    that require you to implement the functions in <code>test_cspotify.c</code>.
+    
+    </p><p>
+    You are given a file <code class="lang-clike">test_main.c</code>. This
+    is not the same as the interactive program in <code class="lang-clike">main.c</code>. 
+    Instead, it runs the series of automatic tests on 
+    the functionality provided by <code class="lang-clike">cspotify.h</code> and <code class="lang-clike">cspotify.c</code>. You should not change this main function.
+    </p><p>
+    Your main function will call other functions that look like this:
+    
+    
+</p><div class="highlight"><pre><span></span><span class="c1">// Test function for 'add_playlist'</span>
+<span class="kt">int</span> <span class="nf">test_add_playlist</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// Test 1: Does add_playlist return SUCCESS and add </span>
+    <span class="c1">// when adding one Playlist with a valid name?</span>
+    <span class="n">Library</span> <span class="n">testLibrary</span> <span class="o">=</span> <span class="n">create_library</span><span class="p">();</span>
+
+    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">add_playlist</span><span class="p">(</span><span class="n">testLibrary</span><span class="p">,</span> <span class="s">"Favourites"</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="o">!=</span> <span class="n">SUCCESS</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"DOES NOT MEET SPEC</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">char</span> <span class="n">printText</span><span class="p">[</span><span class="mi">10000</span><span class="p">];</span>
+    <span class="n">CAPTURE</span><span class="p">(</span><span class="n">print_library</span><span class="p">(</span><span class="n">testLibrary</span><span class="p">),</span> <span class="n">printText</span><span class="p">,</span> <span class="mi">10000</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">string_contains</span><span class="p">(</span><span class="n">printText</span><span class="p">,</span> <span class="s">"Favourites"</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"DOES NOT MEET SPEC</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Test 2: Does add_playlist return ERROR_INVALID_INPUTS</span>
+    <span class="c1">// and not add the playlist into the Library</span>
+    <span class="c1">// when trying to add a Playlist with an invalid name?</span>
+    <span class="c1">// TODO: Add your test for Test 2</span>
+
+    <span class="c1">// Test 3: ???</span>
+    <span class="c1">// TODO: Add your own test, and explain it.</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"MEETS SPEC</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+    
+    Your job is to fill in the spaces where it says "TODO" with a series of C
+    statements that check whether the functions in <code>cspotify.c</code> work.
+    <p>
+    As you can see in Test 1, some of these functions have already been partially
+    implemented to show you what you should do
+    </p><p>
+    Some functions will ask you to specifically test something (in this case, to
+    make sure <code>add_playlist</code> returns the correct amount if you call it
+    many times). 
+    </p><p>
+    Some functions will ask you to decide on your own test. You should describe what
+    you are testing, and then write a test for that situation.
+    </p><p> Note that you can <b>only</b> test functions by checking their outputs,
+        and their output to the terminal. You cannot access the fields of a struct, nor
+        can you redefine the structs from <code>cspotify.c</code> in <code>test_cspotify.c</code>.
+        Doing so may cause you to lose marks.
+    </p><p>
+        You can test your tests yourself, by compiling it against your <code>cspotify.c</code>.
+    </p><p>
+        This is what you will see when you compile the starter code/tests.
+</p><pre is="tty"><kbd is="sh">dcc -o test_cspotify test_cspotify.c cspotify.c capture.c test_main.c</kbd>
+<kbd is="sh">./test_cspotify</kbd>   
+*~~~~~~~~~~~~~~~~~~~~~~~{ CSpotify Tests }~~~~~~~~~~~~~~~~~~~~~~~*
+Stage 1 - Test add_playlist: DOES NOT MEET SPEC
+Stage 1 - Test rename_playlist: DOES NOT MEET SPEC
+Stage 2 - Test add_track: MEETS SPEC
+Stage 2 - Test playlist_length: MEETS SPEC
+Stage 3 - Test delete_playlist: MEETS SPEC
+Stage 4 - Test soundex_search: MEETS SPEC
+Your extra tests: MEETS SPEC
+</pre>
+
+<p> If you want to see exactly what program the autotests will run, you can use the commands:
+</p>
+<pre is="tty"><kbd is="sh">1511 build_test_cspotify test_cspotify.c -o test_cspotify</kbd>
+<kbd is="sh">./test_cspotify INVALID_INPUTS</kbd>
+<kbd is="sh">./test_cspotify RENAME_FAILS</kbd>
+<kbd is="sh">./test_cspotify NONE</kbd>
+<kbd is="sh">./test_cspotify MANY_TRACKS</kbd>
+<kbd is="sh">./test_cspotify NO_MINUTES</kbd>
+<kbd is="sh">./test_cspotify NO_DELETE_FIRST</kbd>
+</pre>    
+<p> The above commands will each run a different broken solution, so you can see if your program functions correctly. </p>
+    <h3>Capture</h3>
+    <p>
+    You may notice that we have given you two extra files -- <code>capture.c</code> 
+    and <code>capture.h</code>. These files define the <code>CAPTURE</code> macro. 
+    Macros are not covered in this course
+    and as a result, you do not need to understand these files.
+    
+    </p><p>
+    You can use them to capture what a function prints and put it into a string. 
+    This is useful if you use it with for example, the <code>print_library</code> 
+    function, since you can then test the output for the <code>Library</code> is as you expect.
+    </p><p>
+    The header of <code>capture.h</code> describes how to use it.
+    
+    
+</p><div class="highlight"><pre><span></span><span class="c1">// This file contains the `CAPTURE()` macro. To use this macro,</span>
+<span class="c1">// you should define a large, empty string. Lets say your string is:</span>
+<span class="c1">//   char str[MAX_LENGTH];</span>
+<span class="c1">// Then you can do the following:</span>
+<span class="c1">//   CAPTURE(my_function(), str, MAX_LENGTH)</span>
+<span class="c1">// Which will put the output of `my_function()` into str.</span>
+</pre></div>
+
+    
+    <h2 id="autotests">Autotests</h2>
+    <p>
+    As usual autotest is available with some simple tests - but your own tests
+    in <code>test_cspotify.c</code> may be more useful at pinpointing exactly which 
+    functions are and aren't working.
+    
+</p><pre is="tty"><kbd is="sh">1511 autotest cspotify</kbd>
+</pre>
+    
+    <p>
+    If you wish to use autotest to view only a specific stage of the assignment, 
+    you can use autotest-stage. The following example shows how to autotest stage
+    1 but you can replace the stage number with any stage you would like to test.
+    
+</p><pre is="tty"><kbd is="sh">1511 autotest-stage 01 cspotify</kbd>
+</pre>
+    <div class="alert alert-secondary" id="errata_1">
+      <p>
+        Tests have been added in the autotest which are dedicated to testing 
+        some of the tests you write in <code>test_cspotify.c</code>. 
+        The autotests will run the tests you write in <code>test_cspotify.c</code>
+        with a <strong>deliberately incorrect</strong> <code>cspotify.c</code>
+        solution.
+        Your tests should be able to detect the issue in the broken code and
+        output "DOES NOT MEET SPEC" in particular scenarios.
+
+    </p></div>
+    
+    <h1 id="FAQs">Frequently Asked Questions</h1>
+    
+    <h3>How many tests do I need to complete to get full marks?</h3>
+    
+    <p>You only need to complete the tests marked with "TODO"; except the <code>extra_tests</code>
+        which are optional. For each function, this means you will need to write two tests (note
+        that this desn't include tests we have provided you). You do not need to write tests for
+        stage five, though we encourage you to do so for your own learning and enjoyment!</p>
+
+    <h3>Why can't I access structs from <code>cspotify.c</code> inside of <code>test_cspotify.c</code>?</h3>
+    <p>The way C works is if the struct definition is not present in the current <code>.c</code> file then the code there is not able to access the members of that struct. You can create a pointer variable which points to that struct, but you will not be able to access it's members with <code>-&gt;</code>. This is a good thing, and is intended.</p>
+    <p>This design feature is because it allows us to implement Abstract Data-Types (ADTs). The objective of using ADTs is so that the code of one file can not access the “inner workings” of a variable that it uses, but is restricted to calling functions from a .h file with that variable. This may sound counter productive at first, why would you want to limit access to a variable? Actually there are several advantages:</p>
+    <ol>
+        <li>
+            <strong>Access Control</strong>: This is a useful concept when you have multiple programmers working together. It allows you to police the things that happens to your <code>Library</code>. If you are the creator of the data type (the <code>Library</code>) you can prevent other people (who may not know what their doing) from changing pointers (perhaps accidentally) in your data structure and in general ruining things.</li>
+        <li>
+            <strong>Abstraction</strong>: It presents a simple interface (defined in the .h file) to use the code of your <code>Library</code>. If you are the user of the data type someone else has created, it is really helpful to be presented with a simpler interface which hides the details of the underlying data structures, so they don't have to learn as many things to be able to use your data type.</li>
+        <li>
+            <strong>Decoupling</strong>: All <code>test_cspotify.c</code> files will conform to a common interface. Perhaps the way the other students in this course organised the members in their structs might be different to the way you're doing it. Tests which don't directly interact with the <code>Library</code>'s members are interchangeable in this sense, one student's tests could be paired up with another student's <code>Library</code> and there wouldn't be any compatibility issues there.</li>
+    </ol>
+    <p>So, to fix your error, try to design tests which don't stab <code>-&gt;</code> into the <code>Library</code>, just call the functions in <code>cspotify.h</code> and check their outputs are correct/they did the correct things.</p>
+    <p>(Answer adapted from a forum post by Dean Wunder)</p>
+    <h3>Can I define structs from <code>cspotify.c</code> in <code>test_cspotify.c</code>?</h3>
+    <p>Unfortunately no, See above.</p>
+    <h3>Why do I keep getting the <code>Incomplete definition of type ...</code> error?</h3>
+    <p>See above.</p>
+    
+    <p> Look out for this space!
+      More may be added to clarify any questions throughout the assignment!
+
+
+
+
+
+</p><h1 id="assessment" class="mb-3 mt-1">Assessment</h1>
+<h2 id="attribution">Attribution of Work</h2>
+<p>
+This is an individual assignment. The work you submit must be your own work and only your
+work apart from  exceptions below.  Joint work is not permitted.
+</p><p>
+You may use small amounts (&lt; 10 lines) of general purpose code (not
+specific to the assignment) obtained from
+site such as Stack Overflow or other publically available resources.
+You should attribute clearly the source of this code in a comment
+with it.
+</p><p>
+You are not permitted to request help with the assignment apart from
+in the course forum, help sessions or from course lecturers or tutors.
+</p><p>
+Do not provide or show your assignment work to any other person (including by posting it on the forum)
+apart from the teaching staff of COMP1511.
+
+</p><p>
+The work you submit must otherwise be entirely your own work.  Submission of work partially or completely derived
+from any other person or jointly written with any other person is not permitted.
+The penalties for such an offence may include negative marks,
+automatic failure of the course and possibly other academic discipline.
+Assignment submissions will be examined both automatically and manually
+for such submissions.
+</p><p>
+Relevant scholarship authorities will be informed if students holding scholarships
+are involved in an incident of plagiarism or other misconduct.
+If you knowingly provide or show your assignment work to another person for any
+reason, and work derived from it is submitted you may be penalised, even
+if the work was submitted without your knowledge or consent.  This may
+apply even if your work is submitted by a third party unknown to you.
+</p><p>
+Note, you will not be penalised if your work is
+taken without your consent or knowledge.
+
+</p><h2 id="submission">Submission of Work</h2>
+<b>
+You are required to test and/or submit intermediate versions of your assignment.
+</b>
+Every time you work on the assignment and make some progress you
+should copy your work to your CSE account and submit it using the <code>give</code> command,
+or autotest it using <code>1511 autotest</code>
+<p>
+It is fine if intermediate versions do not compile or otherwise
+fail submission tests.
+</p><p>
+    Only the final submitted version of your assignment will be marked. <b>You must <code>give</code> when you
+    have completed your assignment.</b>
+</p><p>
+If you would like to retrieve your old work, you can go to: <a href="https://cgi.cse.unsw.edu.au/~cs1511/20T2/student/">View Autotests/Submissions/Marking</a> and click the yellow bubble next to <code>ass2_cspotify</code>. This will show you a timeline of all the code you have submitted recently.
+</p><p>
+You submit your work like this:
+</p><p>
+
+</p><pre is="tty"><kbd is="sh">give cs1511 ass2_cspotify cspotify.c test_cspotify.c</kbd>
+</pre>
+
+<p>
+    The only files you can modify are <code>cspotify.c</code> and <code>test_cspotify.c</code>.
+    <b>It is not possible to add new files, or modify the other files we have given you</b>.
+    If you believe you need to modify those files, you have misunderstood the specification.
+
+You should not modify your copies of those files in any way.
+
+</p><h2 id="assessment-scheme">Assessment Scheme</h2>
+
+<p>
+This assignment will contribute 25% to your final mark.
+</p><p>
+70% of the marks for this assignment will be based on the performance of
+the functions you write in <i>cspotify.c</i>.
+</p><p>
+10% of the marks for this assignment will come from the <code>test_cspotify.c</code> file.
+We will examine your own test cases to assess how many distinct cases they test, and whether
+they meet the descriptions in <code>test_cspotify.h</code>.
+</p>
+<p>
+20% of the marks for assignment 2 will come from hand marking of the readability
+of the C you have written.  These marks will be awarded on the basis of clarity,
+commenting, elegance and style.  In other words, your tutor will assess how
+easy it is for a human to read and understand your program.
+</p><p>
+
+</p><p>
+Marks for your performance will be allocated roughly according to the below scheme.
+
+</p><table class="table table-bordered table-striped">
+  <tbody><tr><td>100% for Performance</td><td>Completely working implementation of Stages 1-5
+      </td></tr><tr><td>85% for Performance</td><td>Completely working implementation of Stages 1-4
+  </td></tr><tr><td>70% for Performance</td><td>Completely working implementation of Stages 1-3
+  </td></tr><tr><td>60% for Performance</td><td>Completely working implementation of Stages 1 and 2
+  </td></tr><tr><td>50% for Performance</td><td>Completely working implementation of Stages 1 and working selection.
+  </td></tr><tr><td>40% for Performance</td><td>Completely working implementation of Stage 1
+  </td></tr><tr><td>30% for Performance</td><td>Partially working implementation of Stage 1 -- Creating and printing out a playlist's name.
+  </td></tr><tr><td> &lt; 40% for Performance</td><td>Manually assessed based on closeness to a working program.
+</td></tr></tbody></table>
+
+  
+<table class="table table-bordered table-striped">
+  <tbody><tr><td>100% for Style</td><td>Perfect style
+      </td></tr><tr><td>90% for Style</td><td> Great style, almost all style characteristics perfect.
+  </td></tr><tr><td>80% for Style</td><td>Good style, one or two style characteristics not well done.
+  </td></tr><tr><td>70% for Style</td><td>Good style, a few style characteristics not well done.
+  </td></tr><tr><td>60% for Style</td><td>OK style, an attempt at most style characteristics.
+  </td></tr><tr><td> &lt;= 50% for Style</td><td>An attempt at style.
+</td></tr></tbody></table>
+
+Note that the following penalties apply to your total mark for plagiarism:
+
+<table class="table table-bordered table-striped">
+<tbody><tr><td>0 for the assignment</td><td>Knowingly providing your work to anyone and it is subsequently submitted (by anyone).
+</td></tr><tr><td>0 for the assignment</td><td>Submitting any other person's work. This includes joint work.
+</td></tr><tr><td>0 FL for COMP1511</td><td>Paying another person to complete work. Submitting another person's work without their consent.
+</td></tr></tbody></table>
+
+<p>
+The following is an indicative list of characteristics of your program that will be assessed,
+though your program will be assessed wholistically so other charactersitics may be assessed too:
+
+</p><ul>
+    <li>Header Commenting.
+    </li><li>Consistent, sensible indenting.
+    </li><li>Using Blank Lines &amp; Whitespace.
+    </li><li>Using constants.
+    </li><li>Decomposing code into functions where relevent (especially after Stage 2).
+    </li><li>Using comments effectively (at least at top of functions, and not containing irrelevant info).
+</li></ul>
+
+
+<p>
+The course staff may vary the assessment scheme after inspecting
+the assignment submissions but it will remain broadly similar to the description above.
+
+
+</p><h3 id="due">Due Date</h3>
+<p>
+This assignment is due  Sunday 22 November 2020  20:00:00
+</p><p>
+If your assignment is submitted after this date, each hour it is late reduces
+the maximum mark it can achieve by 2%.
+For example if an assignment worth 78% was submitted
+5 hours late, the late submission would have no effect.
+If the same assignment was submitted 15 hours late it would be awarded
+70%, the maximum mark it can achieve at that time.
+
+</p><h3 id="changes">Change Log</h3>
+<dl class="row">
+<dt class="col-3">
+    Version 1.0<br>
+    <small>(2020-11-01 22:30:00)</small>
+  </dt>
+  <dd class="col-9">
+    <ul>
+      <li>Assignment draft released.</li>
+    </ul>
+  </dd><dt class="col-3">
+    Version 1.1<br>
+    <small>(2020-11-02 02:30:00)</small>
+  </dt>
+  <dd class="col-9">
+    <ul>
+      <li>Testing tests for assignment released</li><li>Fix 30% criteria being wrong</li>
+    </ul>
+  </dd><dt class="col-3">
+    Version 1.2<br>
+    <small>(2020-11-07 01:50:00)</small>
+  </dt>
+  <dd class="col-9">
+    <ul>
+      <li>Added explanation relating to autotests for tests</li>
+    </ul>
+  </dd><dt class="col-3">
+    Version 1.3<br>
+    <small>(2020-11-10 18:50:00)</small>
+  </dt>
+  <dd class="col-9">
+    <ul>
+      <li>Added autotest-stage and style instructions; and compile instructions for tests.</li>
+    </ul>
+  </dd><dt class="col-3">
+    Version 1.4<br>
+    <small>(2020-11-11 02:00:00)</small>
+  </dt>
+  <dd class="col-9">
+    <ul>
+      <li>Removed underscores from variable names in diagrams.</li>
+    </ul>
+  </dd><dt class="col-3">
+    Version 1.4.1<br>
+    <small>(2020-11-17 18:00:00)</small>
+  </dt>
+  <dd class="col-9">
+    <ul>
+      <li>Added soundex explainer</li>
+    </ul>
+  </dd>
+</dl>
+
+<h3 id="credits">Credits</h3>
+<p>
+Created by Tammy Zhong.
+</p><p>
+Credits to Marc Chee, Tom Kunc, Dean Wunder, Ollie Xue and Tammy Zhong for 
+this assignment.
+
+
+
+</p></div> <!-- col contents -->
+<div class="d-none d-lg-block col-lg-2">
+  <nav id="toc" data-toggle="toc"><ul class="nav navbar-nav"><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#assignment-2-cspotify">
+Assignment 2 - CSpotify
+</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#introduction">Introduction</a><ul class="nav navbar-nav"><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#goal">Your Goal</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#library">The Overall Picture - Your Library</a></li></ul></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#getting-started">Getting Started</a><ul class="nav navbar-nav"><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#starter-code">Starter Code</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#allowed-c-features">Allowed C Features</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#reference-implementation">Reference Implementation</a></li></ul></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#stage_one">Stage One</a><ul class="nav navbar-nav"><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#add_playlist">Add a playlist</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#print_library">Print Out the Library</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#rename_playlist">Rename a Playlist</a></li></ul></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#stage_two">Stage Two</a><ul class="nav navbar-nav"><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#select_next">Select the Next Playlist</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#select_prev">Select the Previous Playlist</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#add_track">Add a Track</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#playlist_length">Calculate the Length of the Playlist</a></li></ul></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#stage_three">Stage Three</a><ul class="nav navbar-nav"><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#delete_track">Delete a Given Track</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#delete_selected">Delete the Selected Playlist</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#delete_library">Delete the Entire Library</a></li></ul></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#stage_four">Stage Four</a><ul class="nav navbar-nav"><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#cut_paste">Cut and Paste Track</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#soundex">Soundex Search</a></li></ul></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#stage_five">Stage Five</a><ul class="nav navbar-nav"><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#filtered">Add Filtered Playlist</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#reorder">Reorder Playlist</a></li></ul></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#testing">Testing</a><ul class="nav navbar-nav"><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#test_cspotify">Writing your own Automated Tests</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#autotests">Autotests</a></li></ul></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#FAQs">Frequently Asked Questions</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#assessment">Assessment</a><ul class="nav navbar-nav"><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#attribution">Attribution of Work</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#submission">Submission of Work</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~cs1511/20T3/assignments/ass2/index.html#assessment-scheme">Assessment Scheme</a></li></ul></li></ul></nav>
+</div> <!-- col toc -->
+</div> <!-- row -->
+<script>
+  $(function() {
+  var navSelector = "#toc";
+  var $myNav = $(navSelector);
+  Toc.init($myNav);
+  $("body").scrollspy({
+    target: navSelector
+  });
+});
+</script>
+
+
+
+
+</main>
+
+<footer class="mt-3 pt-3 bg-dark text-center no-print">
+<p class="text-muted">
+<strong>COMP1511 20T3: Programming Fundamentals</strong>
+is brought to you by <br>
+the <a href="https://www.cse.unsw.edu.au/">School of Computer Science and Engineering</a><br>
+at the <a href="https://www.unsw.edu.au/">University of New South Wales</a>, Sydney.<br>
+For all enquiries, please email the class account at
+<a href="mailto:@cse.unsw.edu.au">cs1511@cse.unsw.edu.au</a><br>
+
+<small>CRICOS Provider 00098G</small>
+</p>
+
+
+</footer>
+
+
+</body></html>
