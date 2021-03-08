@@ -39,8 +39,7 @@ int main(void) {
         medium = second;
         largest = first;
     }
-
-
+    
     printf("The integers in order are: %d, %d, %d \n", smallest, medium, largest);
 
 }
