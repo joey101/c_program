@@ -5,9 +5,13 @@
 
 
 int main (void) { 
-    printf("Fuck me dadddyyyy");
+    int counter = 10;
 
-    printf("I am funny");
+    while (counter != -1) {
+        printf("%d\n", counter);
+        counter--;
+    }
+
 
 
 }
