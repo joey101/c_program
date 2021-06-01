@@ -5,6 +5,20 @@
 #include <stdio.h>
 
 int main(void) {
+    int number;
+
+    printf("Enter number: ");
+    scanf("%d",&number);
+
+    printf("The factors of %d are:", number);
+    for (int i = 0; i <= number; i++) {
+        if ((i % number) == 0) { 
+            printf("%d", i);
+        }
+
+
+    }
+
 
 
 }
