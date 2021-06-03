@@ -13,7 +13,7 @@ int main () {
 
     if (fgets(sentence, 10, stdin) != NULL) {
 
-        printf("%s.n", sentence);
+        printf("%s", sentence);
 
     }
 
