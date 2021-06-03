@@ -4,18 +4,23 @@
 
 
 #include <stdio.h> 
+#include <string.h>
 
-
+#define MAX_LEN 1024
 
 int main () {
 
-    char sentence[10];
+    char sentence[MAX_LEN];
 
-    if (fgets(sentence, 10, stdin) != NULL) {
-
-        printf("%s", sentence);
-
+    while (fgets(sentence, MAX_LEN, stdin) != NULL) {
+        
+        int length  = strlen(sentence);
+        int even = length % 2;
+        if (even == 0) {
+            fputs(sentence, stdout);
+        }
     }
+    
 
 
     return 0;
