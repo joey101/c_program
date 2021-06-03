@@ -1,0 +1,21 @@
+
+
+
+else if (no_1 == no_2 && no_1 == no_3 && no_2 == no_3) {
+        printf("The integers in order are: %d %d %d\n", no_1, no_2, no_3);
+    }
+    else if (no_1 == no_2 && no_1 < no_3 ) {
+        printf("The integers in order are: %d %d %d\n", no_1, no_2, no_3);
+    }
+    else if (no_2 == no_3 && no_2 < no_1) {
+        printf("The integers in order are: %d %d %d\n", no_2, no_3, no_1);
+    }
+    else if (no_2 == no_3 && no_2 > no_1) {
+        printf("The integers in order are: %d %d %d\n", no_1, no_2, no_3);
+    }
+    else if (no_1 == no_3 && no_1 < no_2) {
+        printf("The integers in order are: %d %d %d\n", no_1, no_3, no_2);
+    }
+     else if (no_1 == no_3 && no_1 > no_2) {
+        printf("The integers in order are: %d %d %d\n", no_2, no_3, no_1);
+    }

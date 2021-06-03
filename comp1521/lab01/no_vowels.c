@@ -3,39 +3,39 @@
 // 2/06/2021
 #include <stdio.h>
  
-int devowel(int letter);
+int devowel(char letter[]);
 
 int main () {
-    char input;
-    char sentence[];
-
-
-    scanf("%c", &input);
-    for (int i = 0; i < sizeof(sentence); i++) { 
-
-
-    }
-
-    while (input != EOF) { 
-        scanf("%c", &input);
+    int length = 100;
+    char input[length];
     
 
+    while (scanf("%[^\n]s", &input) != EOF) {
 
+
+        devowel(input);
+        printf("%s", input);
+        
+        scanf("%[^\n]s", &input);
     }
-
 }
 
-int devowel(int letter) { 
-    
-    char vowels[] = "aeiouAEIOU";
+int devowel(char letter[]) { 
+    int i = 0;
+    while (letter[i] != '\0') {
 
-    for (int j = 0; j < sizeof(letter); j++) {    
-        for (int i = 0; i < sizeof(vowels); i++) {
-            if (letter[j]) == vowels[i] {
-                return 1;
-            }
+        if(letter[i] =='A' || letter[i] =='a' || letter[i] =='E' || 
+           letter[i] =='e' || letter[i] =='I' || letter[i] =='i' || 
+           letter[i] =='O' || letter[i] =='o' || letter[i] =='U' || 
+           letter[i] =='u') {
+               
+               for (int j = 0; letter[j] != '\0'; j++) {
+                   letter[j] = letter[j + 1];
 
+               }
         }
+        i++;
     }
-    return 0
+    return *letter;
+
 }

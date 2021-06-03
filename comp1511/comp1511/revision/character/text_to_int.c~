@@ -1,0 +1,24 @@
+// Scan in an array.
+// Created by
+//  ... (z0000000)
+// Created on 2019-??-??
+
+#include <stdio.h>
+#include <assert.h>
+
+#define MAX_SIZE 100000
+
+int main () {
+
+    int ch = getchar();
+    char ch[MAX_SIZE];
+    while (ch != EOF) {
+        
+        print
+        ch = getchar();
+        
+    }
+  
+
+
+}

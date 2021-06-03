@@ -1,12 +1,19 @@
 #include <stdio.h>
 
 int main () {
-    char input[10];
-    scanf("%c", &input);
-    
-    //for (int i = 0; i < sizeof(input); i++) {
-    printf("%c\n", input);
-    //}
+    int length = 100;
+    char input[length];
+    int i = 0;
+    while (scanf("%[^\n]s", &input) == 1  ) {
+
+
+        
+        printf("%s", input);
+        
+        scanf("%[^\n]s", &input);
+        
+    }
+
     return 0;
 }
 
