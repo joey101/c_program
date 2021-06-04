@@ -1,7 +1,9 @@
 // The goal of this program is to devowel a sentence.
 // By Jawad Tanana z5320158
 // 2/06/2021
+
 #include <stdio.h> 
+
 int devowel(char letter);
 
 int main () {

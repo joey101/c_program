@@ -6,26 +6,31 @@ int main (int argc, char *argv[]) {
     int max = 0;
     int sum = 0;
     int prod = 1;
-    int mean = 0;
-    char random;
-    int number[argc] = strtol(*argv, &random ,10);
+    int mean;
+    
+    for (int i = 1; i < argc; i++) {
+        int number = atoi(argv[i]);
+        if (number < min) {
+            min = number;
+        }
+        if (number > max) {
+            max = number;
+        }
 
-    for (int i = 0; i < argc; i++) {
-        if (number[i] < min) {
-            min = number[i];
-        }
-        if (number[i] > max) {
-            max = number[i];
-        }
-        sum += number[i];
-        prod = prod * number[i];
-        mean = sum / argc;
+        sum += number;
+        prod = prod * number;
     }
-    printf("MIN: %d", min);
-    printf("MAX: %d", max);
-    printf("SUM: %d", sum);
-    printf("PROD: %d", prod);
-    printf("MEAN: %d", mean);
+    mean = sum / (argc-1);
+    
+
+
+
+
+    printf("MIN:  %d\n", min);
+    printf("MAX:  %d\n", max);
+    printf("SUM:  %d\n", sum);
+    printf("PROD: %d\n", prod);
+    printf("MEAN: %d\n", mean);
    
 
 
