@@ -7,11 +7,13 @@ void collatz_recur(int number);
 
 
 int main (int argc, char *argv[]) {
+   
+    if (argc == 1) {
+        printf("Usage: %s NUMBER\n", argv[0]);
+        return 1;    
+    }
     int number = atoi(argv[1]);
 
-    if (argv[1] == NULL) {
-        printf("Usage: %s NUMBER", argv);
-    }
     printf("%d\n", number);
     collatz_recur(number);
 }
