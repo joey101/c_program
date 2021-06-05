@@ -1,19 +1,13 @@
 #include <stdio.h>
 
 int main () {
-    int length = 100;
-    char input[length];
-    int i = 0;
-    while (scanf("%[^\n]s", &input) == 1) {
-
-
-        
-        printf("%s", input);
-        
-        scanf("%[^\n]s", &input);
-        
-    }
+    int r;
+    r = 10 & 12;
+    printf("Result: %d\n", r);
 
     return 0;
 }
-
+//int a = 20;	/* 20 = 010100 */  
+//int b = 21;	/* 21 = 010101 */
+01010
+01100
